@@ -1,7 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://gt3u1y3gne8e"]
+[gd_scene load_steps=3 format=3 uid="uid://gt3u1y3gne8e"]
 
 [ext_resource type="PackedScene" uid="uid://dw8rb36fqenyh" path="res://Scenes/menu.tscn" id="1_ebmjs"]
+[ext_resource type="Texture2D" uid="uid://552cgm5uc4tj" path="res://Assets/squirrel2.jpg" id="2_qxrlw"]
 
 [node name="Game" type="Node2D"]
 
 [node name="Menu" parent="." instance=ExtResource("1_ebmjs")]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(576, 325.00003)
+scale = Vector2(0.32900235, 0.2768201)
+texture = ExtResource("2_qxrlw")
