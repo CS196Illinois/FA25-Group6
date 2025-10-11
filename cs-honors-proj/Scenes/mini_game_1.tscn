@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://cnueh8q68enwh"]
+
+[ext_resource type="PackedScene" uid="uid://bdr08iix6j0ti" path="res://Scenes/squirrel.tscn" id="1_maoqn"]
+[ext_resource type="PackedScene" uid="uid://c1jwxcesswy3v" path="res://Scenes/tree.tscn" id="2_tnnmv"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_maoqn"]
+
+[node name="mini game 1" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Tree" parent="." instance=ExtResource("2_tnnmv")]
+position = Vector2(132, 0)
+
+[node name="Squirrel" parent="." instance=ExtResource("1_maoqn")]
+position = Vector2(2, 0)
+collision_layer = 2
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("WorldBoundaryShape2D_maoqn")

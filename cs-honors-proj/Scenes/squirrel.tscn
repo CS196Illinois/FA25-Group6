@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://bdr08iix6j0ti"]
+
+[ext_resource type="Texture2D" uid="uid://1enkgnhrp68x" path="res://Assets/squirrel temp.png" id="1_7555m"]
+[ext_resource type="Script" uid="uid://bb6iimr6gl0lk" path="res://Scripts/squirrel.gd" id="1_opuox"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kugrw"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_7555m")
+}],
+"loop": true,
+"name": &"squirrel",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_opuox"]
+radius = 20.0
+
+[node name="Squirrel" type="CharacterBody2D"]
+collision_layer = 2
+script = ExtResource("1_opuox")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1.0000038, -26)
+scale = Vector2(0.02487965, 0.025715416)
+sprite_frames = SubResource("SpriteFrames_kugrw")
+animation = &"squirrel"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-3, -20)
+shape = SubResource("CircleShape2D_opuox")
