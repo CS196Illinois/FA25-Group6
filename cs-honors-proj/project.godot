@@ -11,5 +11,14 @@ config_version=5
 [application]
 
 config/name="CS Honors Proj"
+run/main_scene="uid://budi2sqeikeo6"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
+
+[dotnet]
+
+project/assembly_name="CS Honors Proj"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
