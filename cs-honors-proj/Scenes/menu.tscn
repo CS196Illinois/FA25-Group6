@@ -15,29 +15,29 @@ grow_vertical = 2
 scale = Vector2(1, 1.1313636)
 size_flags_horizontal = 4
 
-[node name="Button" type="Button" parent="newgame"]
-layout_mode = 2
-text = "New Game"
-
-[node name="Button2" type="Button" parent="newgame"]
-layout_mode = 2
-text = "Options"
-
-[node name="Button3" type="Button" parent="newgame"]
-layout_mode = 2
-text = "Quit"
-
-[node name="Button4" type="Button" parent="newgame"]
+[node name="ResumeButton" type="Button" parent="newgame"]
 layout_mode = 2
 text = "Resume"
 
-[node name="Button5" type="Button" parent="newgame"]
+[node name="NewGameButton" type="Button" parent="newgame"]
+layout_mode = 2
+text = "New Game"
+
+[node name="OptionsButton" type="Button" parent="newgame"]
+layout_mode = 2
+text = "Options"
+
+[node name="TutorialButton" type="Button" parent="newgame"]
 layout_mode = 2
 text = "Tutorial"
+
+[node name="QuitButton" type="Button" parent="newgame"]
+layout_mode = 2
+text = "Quit"
 
 [node name="Label" type="Label" parent="."]
 offset_left = 526.0
 offset_top = 167.0
 offset_right = 630.0
 offset_bottom = 190.0
-text = "Squirel Game"
+text = "Squirrel Game"
