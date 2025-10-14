@@ -3,7 +3,6 @@
 [node name="Menu" type="Node"]
 
 [node name="newgame" type="VBoxContainer" parent="."]
-visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -37,7 +36,6 @@ layout_mode = 2
 text = "Quit"
 
 [node name="Label" type="Label" parent="."]
-visible = false
 offset_left = 526.0
 offset_top = 167.0
 offset_right = 630.0
