@@ -14,6 +14,7 @@ func _on_body_entered(body: Node2D) -> void:
 
 func _process(delta):
 	if player_in_area and Input.is_action_just_pressed("interact") and first and !inCD:
+		#check all the requirement to create new coins
 		first = false
 		if current_coin and current_coin.is_inside_tree():
 			return
@@ -21,6 +22,7 @@ func _process(delta):
 		else:
 			cd.start()
 			inCD = true
+		#avoid frequently create coin
 		var new_coin = coin_scene.instantiate() # create new coin
 		new_coin.position = self.position + Vector2(0, -30) 
 		# create coin on the top of the trash bin
@@ -28,7 +30,7 @@ func _process(delta):
 		pickupsound.play()
 		current_coin = new_coin
 
-
+#player must leave the area and come in again to create next coin
 func _on_body_exited(body: Node2D) -> void:
 	player_in_area = false
 	first = true

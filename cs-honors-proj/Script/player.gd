@@ -4,6 +4,8 @@ extends CharacterBody2D
 const SPEED = 100.0
 const JUMP_VELOCITY = -300.0
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+var playing = false;
+
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -20,10 +22,16 @@ func _physics_process(delta: float) -> void:
 		animated_sprite_2d.flip_h = false
 	elif direction < 0:
 		animated_sprite_2d.flip_h = true
-	#play animations
+	# play animations each time when press "K" without loop
 	if Input.is_action_pressed("interact") and is_on_floor():
-		animated_sprite_2d.play("beat")
-	elif is_on_floor():
+		if !playing:
+			animated_sprite_2d.play("beat")
+			await animated_sprite_2d.animation_finished
+			playing = true;
+	elif Input.is_action_just_released("interact") and is_on_floor():
+		playing = false;
+	#static state, normal run and jump
+	if is_on_floor():
 		if direction == 0:
 			animated_sprite_2d.play("idle")
 		else:
