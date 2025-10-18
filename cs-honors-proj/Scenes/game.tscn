@@ -10,12 +10,6 @@ z_index = 1
 offset_right = 1152.0
 offset_bottom = 648.0
 
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_right = 1154.0
-offset_bottom = 652.0
-mouse_filter = 2
-color = Color(0.5400049, 0.71692884, 0.9999998, 1)
-
 [node name="Sprite2D" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(576, 325.00003)
