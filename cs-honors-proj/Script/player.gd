@@ -4,8 +4,15 @@ extends CharacterBody2D
 const SPEED = 100.0
 const JUMP_VELOCITY = -300.0
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
-var playing = false;
+var playing = false
+var birth_position: Vector2
 
+func _ready():
+	birth_position = position
+	#get birth position for killzone
+func respawn():
+	position = birth_position
+	velocity = Vector2.ZERO
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
