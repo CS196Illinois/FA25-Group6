@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://552cgm5uc4tj"
-path="res://.godot/imported/squirrel2.jpg-3d9991bf249580b86260255859f5bbb6.ctex"
+uid="uid://b7oqnjja5g4uu"
+path="res://.godot/imported/i_logo.png-31830a47786f773e3ce51b17d742e571.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/squirrel2.jpg"
-dest_files=["res://.godot/imported/squirrel2.jpg-3d9991bf249580b86260255859f5bbb6.ctex"]
+source_file="res://Assets/Sprites/i_logo.png"
+dest_files=["res://.godot/imported/i_logo.png-31830a47786f773e3ce51b17d742e571.ctex"]
 
 [params]
 

@@ -1,14 +1,14 @@
 [gd_scene load_steps=3 format=3 uid="uid://gt3u1y3gne8e"]
 
-[ext_resource type="Texture2D" uid="uid://058aex740bts" path="res://Assets/squirrel3.jpg" id="2_qxrlw"]
+[ext_resource type="Texture2D" uid="uid://058aex740bts" path="res://Assets/Sprites/squirrel3.jpg" id="2_qxrlw"]
 [ext_resource type="PackedScene" uid="uid://cugie8ht3ax5p" path="res://Scenes/main_menu.tscn" id="3_wrm1d"]
 
 [node name="Game" type="Node2D"]
 
 [node name="MainMenu" parent="." instance=ExtResource("3_wrm1d")]
 z_index = 1
-offset_right = 1152.0
-offset_bottom = 648.0
+offset_right = 1280.0
+offset_bottom = 720.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 visible = false
