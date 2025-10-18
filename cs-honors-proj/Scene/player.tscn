@@ -1,7 +1,11 @@
-[gd_scene load_steps=23 format=3 uid="uid://cgqtlonm2cm3i"]
+[gd_scene load_steps=25 format=3 uid="uid://cgqtlonm2cm3i"]
 
 [ext_resource type="Texture2D" uid="uid://crau8b5fv3xqb" path="res://Asset/sprite/Squirrel Sprite Sheet.png" id="1_kelma"]
 [ext_resource type="Script" uid="uid://b2drha0lbokl5" path="res://Script/player.gd" id="1_y8w33"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uktg4"]
+atlas = ExtResource("1_kelma")
+region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lgjog"]
 atlas = ExtResource("1_kelma")
@@ -14,6 +18,10 @@ region = Rect2(64, 160, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_7d6xm"]
 atlas = ExtResource("1_kelma")
 region = Rect2(96, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c40dt"]
+atlas = ExtResource("1_kelma")
+region = Rect2(0, 160, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y8w33"]
 atlas = ExtResource("1_kelma")
@@ -79,6 +87,9 @@ region = Rect2(224, 64, 32, 32)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_uktg4")
+}, {
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_lgjog")
 }, {
 "duration": 1.0,
@@ -86,6 +97,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_7d6xm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c40dt")
 }],
 "loop": false,
 "name": &"beat",
@@ -168,8 +182,6 @@ scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_2sw5t")
 animation = &"beat"
 autoplay = "idle"
-frame = 2
-frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.32864866, -3.076441)
