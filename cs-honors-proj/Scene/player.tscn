@@ -1,11 +1,7 @@
-[gd_scene load_steps=25 format=3 uid="uid://cgqtlonm2cm3i"]
+[gd_scene load_steps=24 format=3 uid="uid://cgqtlonm2cm3i"]
 
 [ext_resource type="Texture2D" uid="uid://crau8b5fv3xqb" path="res://Asset/sprite/Squirrel Sprite Sheet.png" id="1_kelma"]
 [ext_resource type="Script" uid="uid://b2drha0lbokl5" path="res://Script/player.gd" id="1_y8w33"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_uktg4"]
-atlas = ExtResource("1_kelma")
-region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lgjog"]
 atlas = ExtResource("1_kelma")
@@ -86,9 +82,6 @@ region = Rect2(224, 64, 32, 32)
 [sub_resource type="SpriteFrames" id="SpriteFrames_2sw5t"]
 animations = [{
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_uktg4")
-}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_lgjog")
 }, {
