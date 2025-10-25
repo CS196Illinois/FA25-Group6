@@ -1,7 +1,67 @@
-[gd_scene load_steps=7 format=3 uid="uid://bdr08iix6j0ti"]
+[gd_scene load_steps=22 format=3 uid="uid://bdr08iix6j0ti"]
 
-[ext_resource type="Texture2D" uid="uid://1enkgnhrp68x" path="res://Assets/squirrel temp.png" id="1_7555m"]
 [ext_resource type="Script" uid="uid://bb6iimr6gl0lk" path="res://Scripts/squirrel.gd" id="1_opuox"]
+[ext_resource type="Texture2D" uid="uid://bh0anewyepq88" path="res://Assets/Squirrel Sprite Sheet.png" id="2_opuox"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_opuox"]
+atlas = ExtResource("2_opuox")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mtflv"]
+atlas = ExtResource("2_opuox")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c50f1"]
+atlas = ExtResource("2_opuox")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_81htl"]
+atlas = ExtResource("2_opuox")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_axlhr"]
+atlas = ExtResource("2_opuox")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1rkqu"]
+atlas = ExtResource("2_opuox")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t24ju"]
+atlas = ExtResource("2_opuox")
+region = Rect2(32, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dgff4"]
+atlas = ExtResource("2_opuox")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y0ng0"]
+atlas = ExtResource("2_opuox")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ijm4"]
+atlas = ExtResource("2_opuox")
+region = Rect2(64, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_deb05"]
+atlas = ExtResource("2_opuox")
+region = Rect2(96, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ul8tx"]
+atlas = ExtResource("2_opuox")
+region = Rect2(128, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8fp44"]
+atlas = ExtResource("2_opuox")
+region = Rect2(160, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pd7o4"]
+atlas = ExtResource("2_opuox")
+region = Rect2(192, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6drw7"]
+atlas = ExtResource("2_opuox")
+region = Rect2(224, 64, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kugrw"]
 animations = [{
@@ -12,11 +72,63 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_7555m")
+"texture": SubResource("AtlasTexture_opuox")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mtflv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c50f1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_81htl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_axlhr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1rkqu")
 }],
 "loop": true,
-"name": &"squirrel",
+"name": &"squirrel_idle",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t24ju")
+}],
+"loop": true,
+"name": &"squirrel_jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dgff4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y0ng0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ijm4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_deb05")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ul8tx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8fp44")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pd7o4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6drw7")
+}],
+"loop": true,
+"name": &"squirrel_run",
+"speed": 10.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_opuox"]
@@ -33,10 +145,11 @@ collision_layer = 2
 script = ExtResource("1_opuox")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-1.0000002, -9)
-scale = Vector2(0.008010708, 0.00836523)
+position = Vector2(1, -19)
+scale = Vector2(1.1255007, 1.1753107)
 sprite_frames = SubResource("SpriteFrames_kugrw")
-animation = &"squirrel"
+animation = &"squirrel_jump"
+autoplay = "squirrel_idle"
 
 [node name="WallCollision" type="CollisionShape2D" parent="."]
 position = Vector2(0, -7)
