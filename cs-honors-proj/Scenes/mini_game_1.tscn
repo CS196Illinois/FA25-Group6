@@ -164,7 +164,7 @@ position = Vector2(2, -3)
 
 [node name="Camera2D" type="Camera2D" parent="Squirrel"]
 position = Vector2(-2, -34)
-zoom = Vector2(4, 4)
+zoom = Vector2(3, 3)
 position_smoothing_enabled = true
 
 [node name="Enemy" parent="." instance=ExtResource("3_tnnmv")]
