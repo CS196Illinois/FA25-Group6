@@ -1,7 +1,38 @@
-[gd_scene load_steps=3 format=3 uid="uid://gt3u1y3gne8e"]
+[gd_scene load_steps=6 format=3 uid="uid://gt3u1y3gne8e"]
 
 [ext_resource type="Texture2D" uid="uid://058aex740bts" path="res://Assets/Sprites/squirrel3.jpg" id="2_qxrlw"]
+[ext_resource type="Texture2D" uid="uid://brfff2wtq21os" path="res://Assets/Sprites/uiuc_signs_tileset.png" id="3_3dryh"]
 [ext_resource type="PackedScene" uid="uid://cugie8ht3ax5p" path="res://Scenes/main_menu.tscn" id="3_wrm1d"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wowpa"]
+texture = ExtResource("3_3dryh")
+0:0/size_in_atlas = Vector2i(4, 3)
+0:0/0 = 0
+4:0/size_in_atlas = Vector2i(4, 3)
+4:0/0 = 0
+8:0/size_in_atlas = Vector2i(4, 3)
+8:0/0 = 0
+0:3/size_in_atlas = Vector2i(4, 3)
+0:3/0 = 0
+4:3/size_in_atlas = Vector2i(4, 3)
+4:3/0 = 0
+8:3/size_in_atlas = Vector2i(4, 3)
+8:3/0 = 0
+0:6/size_in_atlas = Vector2i(4, 3)
+0:6/0 = 0
+4:6/size_in_atlas = Vector2i(4, 3)
+4:6/0 = 0
+8:6/size_in_atlas = Vector2i(4, 3)
+8:6/0 = 0
+0:9/size_in_atlas = Vector2i(4, 3)
+0:9/0 = 0
+4:9/size_in_atlas = Vector2i(4, 3)
+4:9/0 = 0
+8:9/size_in_atlas = Vector2i(4, 3)
+8:9/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_i6g32"]
+sources/0 = SubResource("TileSetAtlasSource_wowpa")
 
 [node name="Game" type="Node2D"]
 
@@ -15,3 +46,7 @@ visible = false
 position = Vector2(576, 325.00003)
 scale = Vector2(0.32900235, 0.2768201)
 texture = ExtResource("2_qxrlw")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_set = SubResource("TileSet_i6g32")
+metadata/_edit_group_ = true
