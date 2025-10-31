@@ -3,16 +3,25 @@ extends Node
 #part for score(coin) collecting
 @onready var score_label: Label = $ScoreLabel
 var score = 0
+var first_reach_amount = true;
+#prevent repeated dialogue
 func _ready():
 	#connect autoload GameManager to find ScoreLabel
 	score_label = get_tree().get_root().find_child("ScoreLabel", true, false)
+	#connect dialogic signal and begining initial dialog
+	Dialogic.signal_event.connect(_on_dialogic_signal)
+	Dialogic.start("beginning")
+
 #count coins
 func add_point():
 	score += 1
 	if score_label:
 		score_label.text = "Coins: " + str(score)
-
-
+#stop game when choose certain choice
+func _on_dialogic_signal(argument: String):
+	if argument == "stop_game":
+		get_tree().quit()
+		
 # part for npc creating
 @export var human_copy = preload("res://Scene/human.tscn")
 @export var creat_cd := 3.0  # create humann each 3 seconds
@@ -39,3 +48,9 @@ func _process(delta):
 	if time_count >= creat_cd:
 		time_count = 0
 		create_human()
+		
+#add conditional dialog
+	if score == 10 and first_reach_amount:
+		first_reach_amount = false
+		Dialogic.start("coins collection")
+		

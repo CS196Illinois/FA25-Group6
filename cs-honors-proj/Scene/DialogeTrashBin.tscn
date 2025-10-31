@@ -18,3 +18,4 @@ region_enabled = true
 region_rect = Rect2(104, 10, 17, 22)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

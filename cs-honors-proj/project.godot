@@ -18,15 +18,18 @@ config/icon="res://icon.svg"
 [autoload]
 
 Music="*res://Scene/music.tscn"
-GameManager="*res://Script/game_manager.gd"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
+GameManager="*res://Script/game_manager.gd"
 
 [dialogic]
 
 directories/dch_directory={
+"character": "res://dialog/character/character.dch",
 "trashBin": "res://dialog/character/trashBin.dch"
 }
 directories/dtl_directory={
+"beginning": "res://dialog/timeline/beginning.dtl",
+"coins collection": "res://dialog/timeline/coins collection.dtl",
 "greetTrashBin": "res://dialog/timeline/greetTrashBin.dtl",
 "talkAgain": "res://dialog/timeline/talkAgain.dtl"
 }
@@ -64,6 +67,12 @@ audio/channel_defaults={
 "volume": 0.0
 }
 }
+variables={
+"name": ""
+}
+glossary/default_case_sensitive=true
+layout/style_list=[]
+layout/default_style="Default"
 
 [dotnet]
 
