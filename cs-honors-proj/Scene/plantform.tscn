@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://xmkd4ar5x838"]
+
+[ext_resource type="Texture2D" uid="uid://bgb3v4p31urbh" path="res://Asset/sprite/Building Tiles 32x32.png" id="1_jdi8j"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lqkxq"]
+size = Vector2(16, 4)
+
+[node name="plantform" type="AnimatableBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_jdi8j")
+region_enabled = true
+region_rect = Rect2(480, 91, 17, 5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_lqkxq")
+one_way_collision = true
