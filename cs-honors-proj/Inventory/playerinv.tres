@@ -1,10 +1,11 @@
-[gd_resource type="Resource" script_class="Inv" load_steps=4 format=3 uid="uid://b3v8q1itsxbbm"]
+[gd_resource type="Resource" script_class="Inv" load_steps=5 format=3 uid="uid://b3v8q1itsxbbm"]
 
 [ext_resource type="Script" uid="uid://d3mxgu0p6bub8" path="res://Inventory/inventory_item.gd" id="1_j5s0h"]
 [ext_resource type="Resource" uid="uid://bfuyh0yu6sxmr" path="res://Inventory/Items/Item Scripts/acorn.tres" id="2_7ec12"]
+[ext_resource type="Resource" uid="uid://kgedh6xbyby" path="res://Inventory/Items/Item Scripts/ramen.tres" id="3_7ec12"]
 [ext_resource type="Script" uid="uid://c7yc7nkr0tpr6" path="res://Inventory/inventory.gd" id="3_xpsnh"]
 
 [resource]
 script = ExtResource("3_xpsnh")
-items = Array[ExtResource("1_j5s0h")]([ExtResource("2_7ec12"), null, null, null, ExtResource("2_7ec12"), null, null, null, ExtResource("2_7ec12")])
+items = Array[ExtResource("1_j5s0h")]([null, null, ExtResource("2_7ec12"), null, null, ExtResource("2_7ec12"), ExtResource("3_7ec12"), ExtResource("2_7ec12"), null, ExtResource("3_7ec12"), null, ExtResource("2_7ec12")])
 metadata/_custom_type_script = "uid://c7yc7nkr0tpr6"

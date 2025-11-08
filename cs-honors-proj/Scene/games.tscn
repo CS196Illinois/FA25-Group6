@@ -1,5 +1,6 @@
-[gd_scene load_steps=23 format=3 uid="uid://budi2sqeikeo6"]
+[gd_scene load_steps=24 format=3 uid="uid://budi2sqeikeo6"]
 
+[ext_resource type="PackedScene" uid="uid://2hjeruvjv01e" path="res://Inventory/inv_ui.tscn" id="1_0ehlh"]
 [ext_resource type="PackedScene" uid="uid://cgqtlonm2cm3i" path="res://Scene/player.tscn" id="1_7klgh"]
 [ext_resource type="Script" uid="uid://db4f0v7l37sek" path="res://Script/game_manager.gd" id="1_nqbdr"]
 [ext_resource type="Texture2D" uid="uid://c2dypa2rwxa70" path="res://Asset/sprite/City background.png" id="1_ydtro"]
@@ -1031,6 +1032,10 @@ sources/4 = SubResource("TileSetAtlasSource_qpxvt")
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_nx24y"]
 
 [node name="Games" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Inv_UI" parent="CanvasLayer" instance=ExtResource("1_0ehlh")]
 
 [node name="GameManager" type="Node" parent="."]
 unique_name_in_owner = true
