@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://cmr1wvk1ymcw0"]
+[gd_scene load_steps=8 format=3 uid="uid://dxg20fa12du4p"]
 
-[ext_resource type="PackedScene" uid="uid://bcicrkj40xdph" path="res://scenes/player.tscn" id="1_lnu2h"]
-[ext_resource type="Texture2D" uid="uid://30xee3lu63u8" path="res://assets/UIUC_Tilemap_4.png" id="2_lbhrr"]
+[ext_resource type="Texture2D" uid="uid://30xee3lu63u8" path="res://assets/UIUC_Tilemap_4.png" id="1_0r54i"]
+[ext_resource type="Script" uid="uid://doyrewgtbc8dt" path="res://scripts/level.gd" id="1_ofjc2"]
+[ext_resource type="PackedScene" uid="uid://bcicrkj40xdph" path="res://scenes/player.tscn" id="2_7q3og"]
+[ext_resource type="PackedScene" uid="uid://d30h0h1xinlta" path="res://scenes/door.tscn" id="4_ofjc2"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lnu2h"]
-texture = ExtResource("2_lbhrr")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ofjc2"]
+texture = ExtResource("1_0r54i")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -220,11 +222,12 @@ texture = ExtResource("2_lbhrr")
 9:18/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_lnu2h"]
-sources/1 = SubResource("TileSetAtlasSource_lnu2h")
+sources/1 = SubResource("TileSetAtlasSource_ofjc2")
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_yqjtg"]
 
-[node name="Game" type="Node2D"]
+[node name="quad" type="Node2D"]
+script = ExtResource("1_ofjc2")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_lnu2h")
@@ -244,10 +247,48 @@ layer_5/tile_data = PackedInt32Array(65533, 65537, 3, 65534, 131073, 3, 65535, 1
 layer_6/name = "Sign"
 layer_6/tile_data = PackedInt32Array(-524267, 589825, 17, -458731, 589825, 18, -524266, 655361, 17, -458730, 655361, 18, -524265, 720897, 17, -458729, 720897, 18)
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("1_lnu2h")]
-position = Vector2(0, -3.89)
+[node name="Player" parent="." instance=ExtResource("2_7q3og")]
+position = Vector2(-150, -3.89)
+
+[node name="Camera2D2" type="Camera2D" parent="Player"]
+offset = Vector2(6.31, -44.35)
+zoom = Vector2(2.5, 2.5)
+limit_left = -190
+limit_right = 600
+limit_bottom = 100
+position_smoothing_enabled = true
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource("WorldBoundaryShape2D_yqjtg")
+
+[node name="Doors" type="Node" parent="."]
+
+[node name="Door_L" parent="Doors" instance=ExtResource("4_ofjc2")]
+position = Vector2(-192, -80)
+collision_layer = 3
+destination_level_tag = "foellinger"
+destination_door_tag = "R"
+spawn_direction = "right"
+
+[node name="CollisionShape2D" parent="Doors/Door_L" index="0"]
+position = Vector2(1, -5)
+
+[node name="Spawn" parent="Doors/Door_L" index="1"]
+position = Vector2(41.999996, 68)
+
+[node name="Door_R" parent="Doors" instance=ExtResource("4_ofjc2")]
+collision_layer = 3
+destination_level_tag = "union"
+destination_door_tag = "L"
+spawn_direction = "left"
+
+[node name="CollisionShape2D" parent="Doors/Door_R" index="0"]
+position = Vector2(614, -78)
+
+[node name="Spawn" parent="Doors/Door_R" index="1"]
+position = Vector2(570, -1)
+
+[editable path="Doors/Door_L"]
+[editable path="Doors/Door_R"]

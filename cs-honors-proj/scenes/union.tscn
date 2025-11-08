@@ -1,7 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://toe2nweb8qfk"]
+[gd_scene load_steps=9 format=3 uid="uid://toe2nweb8qfk"]
 
 [ext_resource type="Texture2D" uid="uid://30xee3lu63u8" path="res://assets/UIUC_Tilemap_4.png" id="1_j2ctn"]
+[ext_resource type="Script" uid="uid://doyrewgtbc8dt" path="res://scripts/level.gd" id="1_wpfjs"]
 [ext_resource type="PackedScene" uid="uid://bcicrkj40xdph" path="res://scenes/player.tscn" id="2_j2ctn"]
+[ext_resource type="PackedScene" uid="uid://d30h0h1xinlta" path="res://scenes/door.tscn" id="4_wpfjs"]
+[ext_resource type="PackedScene" uid="uid://diw3ir3x2uswa" path="res://scenes/direction_sign.tscn" id="5_qmiqa"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_juhlc"]
 texture = ExtResource("1_j2ctn")
@@ -173,7 +176,11 @@ texture = ExtResource("1_j2ctn")
 [sub_resource type="TileSet" id="TileSet_juhlc"]
 sources/1 = SubResource("TileSetAtlasSource_juhlc")
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_j2ctn"]
+distance = -48.0
+
 [node name="union" type="Node2D"]
+script = ExtResource("1_wpfjs")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_juhlc")
@@ -190,7 +197,52 @@ layer_4/name = "Ground"
 layer_4/tile_data = PackedInt32Array(65533, 65537, 3, 65534, 131073, 3, 65535, 196609, 3, 0, 65537, 3, 1, 131073, 3, 2, 196609, 3, 3, 65537, 3, 4, 131073, 3, 5, 196609, 3, 6, 65537, 3, 7, 131073, 3, 8, 196609, 3, 65530, 65537, 3, 65531, 131073, 3, 65532, 196609, 3, 65527, 65537, 3, 65528, 131073, 3, 65529, 196609, 3, 9, 65537, 3, 10, 131073, 3, 11, 196609, 3, 12, 65537, 3, 13, 131073, 3, 14, 196609, 3, 65524, 65537, 3, 65525, 131073, 3, 65526, 196609, 3)
 
 [node name="Player" parent="." instance=ExtResource("2_j2ctn")]
+position = Vector2(3, 0)
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(0, -112.12)
+[node name="Camera2D2" type="Camera2D" parent="Player"]
+offset = Vector2(0, -44.35)
 zoom = Vector2(2.5, 2.5)
+limit_left = -350
+limit_right = 350
+limit_bottom = 70
+limit_smoothed = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, -46.36)
+shape = SubResource("WorldBoundaryShape2D_j2ctn")
+
+[node name="Doors" type="Node" parent="."]
+
+[node name="Door_L" parent="Doors" instance=ExtResource("4_wpfjs")]
+collision_layer = 3
+destination_level_tag = "quad"
+destination_door_tag = "R"
+spawn_direction = "right"
+
+[node name="CollisionShape2D" parent="Doors/Door_L" index="0"]
+position = Vector2(-342, -76)
+
+[node name="Spawn" parent="Doors/Door_L" index="1"]
+position = Vector2(-305, 0)
+
+[node name="Door_R" parent="Doors" instance=ExtResource("4_wpfjs")]
+
+[node name="CollisionShape2D" parent="Doors/Door_R" index="0"]
+disabled = true
+
+[node name="Spawn" parent="Doors/Door_R" index="1"]
+position = Vector2(289, -1)
+
+[node name="direction sign" parent="." instance=ExtResource("5_qmiqa")]
+
+[node name="Sprite2D" parent="direction sign" index="0"]
+position = Vector2(315, -38)
+
+[node name="CollisionShape2D" parent="direction sign/InteractionArea" index="0"]
+position = Vector2(315, -40)
+
+[editable path="Doors/Door_L"]
+[editable path="Doors/Door_R"]
+[editable path="direction sign"]

@@ -1,8 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://cst33ec5wbx1d"]
+[gd_scene load_steps=15 format=3 uid="uid://cst33ec5wbx1d"]
 
+[ext_resource type="Script" uid="uid://doyrewgtbc8dt" path="res://scripts/level.gd" id="1_prlsm"]
 [ext_resource type="Texture2D" uid="uid://30xee3lu63u8" path="res://assets/UIUC_Tilemap_4.png" id="1_tu7j6"]
 [ext_resource type="PackedScene" uid="uid://bcicrkj40xdph" path="res://scenes/player.tscn" id="2_l6v3y"]
 [ext_resource type="Script" uid="uid://wg715xml4syt" path="res://scripts/area_2d1.gd" id="3_l6v3y"]
+[ext_resource type="PackedScene" uid="uid://d30h0h1xinlta" path="res://scenes/door.tscn" id="5_prlsm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uilh5"]
 texture = ExtResource("1_tu7j6")
@@ -235,7 +237,20 @@ distance = -48.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uilh5"]
 size = Vector2(268.5, 45.5)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l6v3y"]
+size = Vector2(268, 35)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_prlsm"]
+size = Vector2(268, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jx343"]
+size = Vector2(269, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7er0i"]
+size = Vector2(269, 6)
+
 [node name="foellinger" type="Node2D"]
+script = ExtResource("1_prlsm")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_prlsm")
@@ -257,6 +272,14 @@ layer_6/tile_data = PackedInt32Array(65526, 327681, 15, 131062, 327681, 16, 1965
 
 [node name="Player" parent="." instance=ExtResource("2_l6v3y")]
 
+[node name="Camera2D2" type="Camera2D" parent="Player"]
+offset = Vector2(0, -44.35)
+zoom = Vector2(2.5, 2.5)
+limit_left = -250
+limit_right = 250
+limit_bottom = 100
+limit_smoothed = true
+
 [node name="Area2D" type="Area2D" parent="."]
 script = ExtResource("3_l6v3y")
 
@@ -274,9 +297,51 @@ shape = SubResource("WorldBoundaryShape2D_l6v3y")
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+visible = false
 position = Vector2(0, 24)
 shape = SubResource("RectangleShape2D_uilh5")
 one_way_collision = true
 
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D2"]
+visible = false
+position = Vector2(0, 30.5)
+shape = SubResource("RectangleShape2D_l6v3y")
+one_way_collision = true
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D2"]
+visible = false
+position = Vector2(0, 35)
+shape = SubResource("RectangleShape2D_prlsm")
+one_way_collision = true
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D2"]
+visible = false
+position = Vector2(0.5, 41)
+shape = SubResource("RectangleShape2D_jx343")
+one_way_collision = true
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D2"]
+visible = false
+position = Vector2(0.5, 45)
+shape = SubResource("RectangleShape2D_7er0i")
+one_way_collision = true
+
+[node name="Doors" type="Node" parent="."]
+
+[node name="Door_R" parent="Doors" instance=ExtResource("5_prlsm")]
+position = Vector2(276, -30)
+collision_layer = 3
+destination_level_tag = "quad"
+destination_door_tag = "L"
+spawn_direction = "left"
+
+[node name="CollisionShape2D" parent="Doors/Door_R" index="0"]
+position = Vector2(2, -2)
+
+[node name="Spawn" parent="Doors/Door_R" index="1"]
+position = Vector2(-23.999992, 66)
+
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
+
+[editable path="Doors/Door_R"]

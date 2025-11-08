@@ -1,8 +1,16 @@
 extends CharacterBody2D
 
+class_name Player
 
 const SPEED = 200.0
-const JUMP_VELOCITY = -400.0
+const JUMP_VELOCITY = -200.0
+
+func _ready():
+	NavigationManager.on_trigger_player_spawn.connect(_on_spawn)
+
+func _on_spawn(position: Vector2, direction: String):
+	global_position = position
+	# animation_player.play("move_" + direction)
 
 
 func _physics_process(delta: float) -> void:
