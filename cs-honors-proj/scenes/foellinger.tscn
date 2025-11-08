@@ -288,9 +288,9 @@ position = Vector2(287, -44)
 rotation = -1.5707964
 shape = SubResource("WorldBoundaryShape2D_uilh5")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="Ground" type="StaticBody2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
 position = Vector2(0, 1)
 shape = SubResource("WorldBoundaryShape2D_l6v3y")
 
