@@ -1,7 +1,8 @@
-[gd_scene load_steps=24 format=3 uid="uid://cgqtlonm2cm3i"]
+[gd_scene load_steps=25 format=3 uid="uid://cgqtlonm2cm3i"]
 
 [ext_resource type="Texture2D" uid="uid://crau8b5fv3xqb" path="res://Asset/sprite/Squirrel Sprite Sheet.png" id="1_kelma"]
 [ext_resource type="Script" uid="uid://b2drha0lbokl5" path="res://Script/player.gd" id="1_y8w33"]
+[ext_resource type="PackedScene" uid="uid://2hjeruvjv01e" path="res://Inventory/inv_ui.tscn" id="3_xa75v"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lgjog"]
 atlas = ExtResource("1_kelma")
@@ -180,3 +181,9 @@ autoplay = "idle"
 position = Vector2(0.32864866, -3.076441)
 scale = Vector2(2.5691414, 2.5520337)
 shape = SubResource("CircleShape2D_ij4jb")
+
+[node name="Inv_UI" parent="." instance=ExtResource("3_xa75v")]
+offset_left = -24.648655
+offset_top = -32.131725
+offset_right = 23.662708
+offset_bottom = -5.4692307

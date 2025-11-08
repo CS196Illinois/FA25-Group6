@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://budi2sqeikeo6"]
+[gd_scene load_steps=23 format=3 uid="uid://budi2sqeikeo6"]
 
 [ext_resource type="PackedScene" uid="uid://cgqtlonm2cm3i" path="res://Scene/player.tscn" id="1_7klgh"]
 [ext_resource type="Script" uid="uid://db4f0v7l37sek" path="res://Script/game_manager.gd" id="1_nqbdr"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bgb3v4p31urbh" path="res://Asset/sprite/Building Tiles 32x32.png" id="2_a8ql5"]
 [ext_resource type="Texture2D" uid="uid://cggewjte85shw" path="res://Asset/sprite/GandalfHardcore city tiles 32x32.png" id="3_cge5g"]
 [ext_resource type="Texture2D" uid="uid://pl18dlimyjj0" path="res://Asset/sprite/Decoration 32x32.png" id="4_qpxvt"]
+[ext_resource type="Resource" uid="uid://b3v8q1itsxbbm" path="res://Inventory/playerinv.tres" id="5_1sag6"]
 [ext_resource type="Texture2D" uid="uid://d2jwls7xqng8a" path="res://Asset/sprite/world_tileset.png" id="5_cge5g"]
 [ext_resource type="PackedScene" uid="uid://xmkd4ar5x838" path="res://Scene/plantform.tscn" id="6_qpxvt"]
 [ext_resource type="PackedScene" uid="uid://blwp71h10qy7" path="res://Scene/killzone.tscn" id="7_k58gd"]
@@ -1051,6 +1052,7 @@ texture = ExtResource("1_ydtro")
 
 [node name="player" parent="." instance=ExtResource("1_7klgh")]
 position = Vector2(-88, 80)
+inv = ExtResource("5_1sag6")
 
 [node name="Camera2D" type="Camera2D" parent="player"]
 position = Vector2(0.32864872, -23.244226)
@@ -1159,16 +1161,17 @@ position = Vector2(312, 8)
 position = Vector2(416, -32)
 
 [node name="Label" type="Label" parent="."]
-offset_left = -151.0
-offset_top = 13.0
-offset_right = -3.0
-offset_bottom = 67.0
+offset_left = -153.00002
+offset_top = -1.0
+offset_right = -1.0000153
+offset_bottom = 72.0
 scale = Vector2(0.8605631, 0.933661)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("9_nx24y")
 text = "Move: A / D
 Jump: Space
-Interact: K"
+Interact: K
+Inventory: E"
 
 [node name="DialogTrashBin" parent="." instance=ExtResource("10_ipgdv")]
 position = Vector2(-191, 69)
