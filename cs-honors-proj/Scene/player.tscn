@@ -1,7 +1,8 @@
-[gd_scene load_steps=24 format=3 uid="uid://cgqtlonm2cm3i"]
+[gd_scene load_steps=25 format=3 uid="uid://cgqtlonm2cm3i"]
 
 [ext_resource type="Texture2D" uid="uid://crau8b5fv3xqb" path="res://Asset/sprite/Squirrel Sprite Sheet.png" id="1_kelma"]
 [ext_resource type="Script" uid="uid://b2drha0lbokl5" path="res://Script/player.gd" id="1_y8w33"]
+[ext_resource type="PackedScene" uid="uid://ctsg2v5gav0wu" path="res://Bars/need_bar.tscn" id="3_xa75v"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lgjog"]
 atlas = ExtResource("1_kelma")
@@ -183,8 +184,10 @@ shape = SubResource("CircleShape2D_ij4jb")
 
 [node name="Player Needs" type="Node3D" parent="."]
 
-[node name="Control" type="Control" parent="Player Needs"]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="Hunger" type="Node" parent="Player Needs"]
+
+[node name="NeedBar" parent="Player Needs/Hunger" instance=ExtResource("3_xa75v")]
+offset_left = -157.0
+offset_top = -98.0
+offset_right = 143.0
+offset_bottom = -53.0
