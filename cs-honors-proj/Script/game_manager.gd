@@ -4,9 +4,12 @@ extends Node
 @onready var score_label: Label = $ScoreLabel
 var score = 0
 var first_reach_amount = true;
+
+# Global dialogue state
+static var is_dialogue_active = false
 #prevent repeated dialogue
 func _ready():
-	#connect autoload GameManager to find ScoreLabel
+	#connect autoload GameManager to find ScoreLabel.
 	score_label = get_tree().get_root().find_child("ScoreLabel", true, false)
 	#connect dialogic signal and begining initial dialog
 	Dialogic.signal_event.connect(_on_dialogic_signal)
@@ -53,4 +56,3 @@ func _process(delta):
 	if score == 10 and first_reach_amount:
 		first_reach_amount = false
 		Dialogic.start("coins collection")
-		

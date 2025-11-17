@@ -6,8 +6,12 @@ const JUMP_VELOCITY = -300.0
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 var playing = false
 var birth_position: Vector2
+var is_in_dialogue = false  # Lock player movement during dialogue
 
 var strength = 10
+var health = 10
+var agility = 10
+var intelligence = 6
 
 # Double Jump Mechanic
 var double_jump_unlocked = true
@@ -25,11 +29,21 @@ func _ready():
 	#get birth position for killzone
 	if double_jump_unlocked:
 		max_jumps = 2
+	# Connect to Dialogic signals to lock/unlock player during dialogue
+	Dialogic.timeline_started.connect(_on_dialogue_started)
+	Dialogic.timeline_ended.connect(_on_dialogue_ended)
 func respawn():
 	position = birth_position
 	velocity = Vector2.ZERO
 
 func _physics_process(delta: float) -> void:
+	# Lock player movement during dialogue
+	if is_in_dialogue:
+		velocity.x = 0
+		animated_sprite_2d.play("idle")
+		move_and_slide()
+		return
+
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
@@ -71,3 +85,11 @@ func _physics_process(delta: float) -> void:
 		velocity.x = 0
 		#avoid moing when interact
 	move_and_slide()
+
+# Called when dialogue starts
+func _on_dialogue_started():
+	is_in_dialogue = true
+
+# Called when dialogue ends
+func _on_dialogue_ended():
+	is_in_dialogue = false
