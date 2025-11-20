@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bu8112p7vvcww"
-path="res://.godot/imported/HMMHurtBare.png-efd2023c872ef69f63c87c9a0f52c18c.ctex"
+path="res://.godot/imported/HMMHurtBare.png-c214bfcdc45e0db0d5e69a0bbc9d7978.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Asset/sprite/HMMHurtBare.png"
-dest_files=["res://.godot/imported/HMMHurtBare.png-efd2023c872ef69f63c87c9a0f52c18c.ctex"]
+source_file="res://assets/sprite/HMMHurtBare.png"
+dest_files=["res://.godot/imported/HMMHurtBare.png-c214bfcdc45e0db0d5e69a0bbc9d7978.ctex"]
 
 [params]
 
