@@ -12,7 +12,7 @@ func _on_continue_button_pressed() -> void:
 	print("Loading save files!")
 	
 func _on_new_game_button_pressed() -> void:
-	button_press_sfx.play()
+	# button_press_sfx.play()
 	print("Creating new game!")
 
 func _on_options_button_pressed() -> void:
