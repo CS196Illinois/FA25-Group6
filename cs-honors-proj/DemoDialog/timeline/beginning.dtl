@@ -1,0 +1,11 @@
+Good morning! Our cute little squirrel!
+What's your name?
+[text_input text="Please enter your name" var="name"]
+Nice to meet you, {name}.
+What a good day! It's still so peaceful in UIUC.
+What do you wanna to do?
+- I need hibernation.
+	Oh, fine, good night.
+	[signal arg="stop_game"]
+- I'll working for money!
+	Well, just begin your work!
