@@ -1,0 +1,126 @@
+[gd_scene load_steps=8 format=3 uid="uid://cldxn6qlmuws6"]
+
+[ext_resource type="Texture2D" uid="uid://dptw3i7t86epl" path="res://Asset/time_cycle/timecycle-ui.png" id="1_7c4jy"]
+[ext_resource type="Script" uid="uid://busis6pxb1kh0" path="res://Script/time_ui.gd" id="1_glft7"]
+[ext_resource type="FontFile" uid="uid://jsn1r6hmqnfw" path="res://Asset/fonts/PixelOperator8-Bold.ttf" id="2_glft7"]
+[ext_resource type="FontFile" uid="uid://dc3ttbrhos674" path="res://Asset/fonts/PixelOperator8.ttf" id="4_sfdvf"]
+[ext_resource type="Texture2D" uid="uid://ihhtw3rbqjv" path="res://Asset/time_cycle/green square.png" id="5_i3vlg"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ou5ei"]
+font = ExtResource("2_glft7")
+font_size = 12
+font_color = Color(0.17878798, 0.09676828, 0.020742524, 1)
+shadow_color = Color(0.118233345, 0.0769945, 0.006277646, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_i3vlg"]
+font = ExtResource("4_sfdvf")
+font_size = 20
+font_color = Color(0.18039216, 0.09803922, 0.019607844, 1)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_glft7")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 264.0
+offset_bottom = 66.0
+texture = ExtResource("1_7c4jy")
+
+[node name="CenterContainerWeek" type="CenterContainer" parent="."]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 144.0
+offset_bottom = 41.0
+
+[node name="LabelWeek" type="Label" parent="CenterContainerWeek"]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_ou5ei")
+vertical_alignment = 1
+
+[node name="CenterContainerTime" type="CenterContainer" parent="."]
+layout_mode = 0
+offset_left = 148.0
+offset_top = 4.0
+offset_right = 260.0
+offset_bottom = 62.0
+
+[node name="LabelTime" type="Label" parent="CenterContainerTime"]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_i3vlg")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Monday" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 4.0
+offset_top = 45.0
+offset_right = 21.0
+offset_bottom = 62.0
+texture = ExtResource("5_i3vlg")
+expand_mode = 1
+
+[node name="Tuesday" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 24.0
+offset_top = 45.0
+offset_right = 42.0
+offset_bottom = 62.0
+texture = ExtResource("5_i3vlg")
+expand_mode = 1
+
+[node name="Wednesday" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 45.0
+offset_top = 45.0
+offset_right = 63.0
+offset_bottom = 62.0
+texture = ExtResource("5_i3vlg")
+expand_mode = 1
+
+[node name="Thursday" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 65.0
+offset_top = 45.0
+offset_right = 83.0
+offset_bottom = 62.0
+texture = ExtResource("5_i3vlg")
+expand_mode = 1
+
+[node name="Friday" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 86.0
+offset_top = 45.0
+offset_right = 104.0
+offset_bottom = 62.0
+texture = ExtResource("5_i3vlg")
+expand_mode = 1
+
+[node name="Saturday" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 107.0
+offset_top = 45.0
+offset_right = 125.0
+offset_bottom = 62.0
+texture = ExtResource("5_i3vlg")
+expand_mode = 1
+
+[node name="Sunday" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 127.0
+offset_top = 45.0
+offset_right = 145.0
+offset_bottom = 62.0
+texture = ExtResource("5_i3vlg")
+expand_mode = 1

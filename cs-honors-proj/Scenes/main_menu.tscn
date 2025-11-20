@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://cugie8ht3ax5p"]
+[gd_scene load_steps=8 format=3 uid="uid://cugie8ht3ax5p"]
 
 [ext_resource type="Texture2D" uid="uid://bp3m8aq83w0n8" path="res://Assets/squirrelgame_logo_temp.png" id="1_opfnp"]
 [ext_resource type="Texture2D" uid="uid://hovaq7yyr50h" path="res://Assets/continue_temp.png" id="2_cp0ys"]
+[ext_resource type="Script" uid="uid://c0a1ji52x104s" path="res://Scripts/main_menu.gd" id="3_cp0ys"]
 [ext_resource type="Texture2D" uid="uid://ba5kde7k1htur" path="res://Assets/newgame_temp.png" id="3_yhxw7"]
 [ext_resource type="Texture2D" uid="uid://dirsvoe7aqjx1" path="res://Assets/options_temp.png" id="4_trj04"]
 [ext_resource type="Texture2D" uid="uid://6j8uw7bouhm" path="res://Assets/tutorial_temp.png" id="5_16hvj"]
@@ -9,24 +10,26 @@
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("3_cp0ys")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 2
-
-[node name="CenterContainer" type="CenterContainer" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
 
 [node name="MarginContainer" type="MarginContainer" parent="CenterContainer"]
 layout_mode = 2
-theme_override_constants/margin_left = 120
-theme_override_constants/margin_top = 80
-theme_override_constants/margin_right = 120
-theme_override_constants/margin_bottom = 80
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/MarginContainer"]
 layout_mode = 2
@@ -54,39 +57,40 @@ custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
 focus_neighbor_top = NodePath("../QuitButton")
 texture_normal = ExtResource("2_cp0ys")
-stretch_mode = 5
+stretch_mode = 4
 
 [node name="NewGameButton" type="TextureButton" parent="CenterContainer/MarginContainer/VBoxContainer/MenuOptions"]
 custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
 texture_normal = ExtResource("3_yhxw7")
-stretch_mode = 5
+stretch_mode = 4
 
 [node name="OptionsButton" type="TextureButton" parent="CenterContainer/MarginContainer/VBoxContainer/MenuOptions"]
 custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
+action_mode = 0
 texture_normal = ExtResource("4_trj04")
-stretch_mode = 5
+stretch_mode = 4
 
 [node name="TutorialButton" type="TextureButton" parent="CenterContainer/MarginContainer/VBoxContainer/MenuOptions"]
 custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
 texture_normal = ExtResource("5_16hvj")
-stretch_mode = 5
+stretch_mode = 4
 
 [node name="QuitButton" type="TextureButton" parent="CenterContainer/MarginContainer/VBoxContainer/MenuOptions"]
 custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
 texture_normal = ExtResource("6_vr1f0")
-stretch_mode = 5
+stretch_mode = 4
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 z_index = -1
-layout_mode = 0
-offset_left = 620.0
-offset_top = 348.0
-offset_right = 620.0
-offset_bottom = 348.0
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
 mouse_filter = 2
 color = Color(0.5400049, 0.71692884, 0.9999998, 1)
 
