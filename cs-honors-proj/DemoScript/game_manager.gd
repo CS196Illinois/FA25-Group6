@@ -14,6 +14,7 @@ func _ready():
 
 #count coins
 func add_point():
+	print("get")
 	score += 1
 	if score_label:
 		score_label.text = "Coins: " + str(score)
