@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://ceelfrbpamfgq"
-path="res://.godot/imported/John Erick - Pachelbel's Canon.mp3-f17c6abea2a8e89d7381022d2f115800.mp3str"
+path="res://.godot/imported/John Erick - Pachelbel's Canon.mp3-f0a9c6a39a9c849386edf0b75f69ff3d.mp3str"
 
 [deps]
 
-source_file="res://Asset/music/John Erick - Pachelbel's Canon.mp3"
-dest_files=["res://.godot/imported/John Erick - Pachelbel's Canon.mp3-f17c6abea2a8e89d7381022d2f115800.mp3str"]
+source_file="res://Assets/music/John Erick - Pachelbel's Canon.mp3"
+dest_files=["res://.godot/imported/John Erick - Pachelbel's Canon.mp3-f0a9c6a39a9c849386edf0b75f69ff3d.mp3str"]
 
 [params]
 

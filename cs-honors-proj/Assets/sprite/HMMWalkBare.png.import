@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://di64s7xpittlc"
-path="res://.godot/imported/HMMWalkBare.png-ed512f7f0434024e0e2a6c99896c7a9d.ctex"
+path="res://.godot/imported/HMMWalkBare.png-229bbdd97cb1cbe5b5d984e93de0e13f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Asset/sprite/HMMWalkBare.png"
-dest_files=["res://.godot/imported/HMMWalkBare.png-ed512f7f0434024e0e2a6c99896c7a9d.ctex"]
+source_file="res://Assets/sprite/HMMWalkBare.png"
+dest_files=["res://.godot/imported/HMMWalkBare.png-229bbdd97cb1cbe5b5d984e93de0e13f.ctex"]
 
 [params]
 
