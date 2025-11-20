@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://bp5uicr4t13pr"]
+
+[ext_resource type="Texture2D" uid="uid://dxhfjvfyo6kux" path="res://Assets/Sprites/Hearts/Hearts/PNG/animated/no_border/heart_animated_1.png" id="1_slb81"]
+
+[node name="Panel" type="Panel"]
+self_modulate = Color(1, 1, 1, 0)
+offset_right = 19.0
+offset_bottom = 17.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(1.117647, 1)
+texture = ExtResource("1_slb81")
+centered = false
+hframes = 5

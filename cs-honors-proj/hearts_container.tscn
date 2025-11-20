@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://cp0cacynooqtv"]
+
+[ext_resource type="PackedScene" uid="uid://bp5uicr4t13pr" path="res://Assets/Sprites/HeartGui.tscn" id="1_exb31"]
+
+[node name="Hearts Container" type="HBoxContainer"]
+offset_right = 68.0
+offset_bottom = 40.0
+
+[node name="Hear1" parent="." instance=ExtResource("1_exb31")]
+custom_minimum_size = Vector2(14, 0)
+layout_mode = 2
+
+[node name="Hear2" parent="." instance=ExtResource("1_exb31")]
+custom_minimum_size = Vector2(14, 0)
+layout_mode = 2
+
+[node name="Hear3" parent="." instance=ExtResource("1_exb31")]
+custom_minimum_size = Vector2(14, 0)
+layout_mode = 2

@@ -9,10 +9,10 @@ var birth_position: Vector2
 var is_in_dialogue = false  # Lock player movement during dialogue
 
 var strength = 10
-var health = 10
+var health = 3
+@onready var currentHealth = health
 var agility = 10
 var intelligence = 6
-
 # Double Jump Mechanic
 var double_jump_unlocked = true
 var max_jumps = 1
