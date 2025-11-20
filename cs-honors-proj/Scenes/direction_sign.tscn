@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://diw3ir3x2uswa"]
+
+[ext_resource type="PackedScene" uid="uid://bj1nqd0oj30ce" path="res://interaction/interaction area/interaction_area.tscn" id="1_jqg52"]
+[ext_resource type="Script" uid="uid://b6a2aqqd5vkwa" path="res://scripts/direction_sign.gd" id="1_piqgn"]
+[ext_resource type="Texture2D" uid="uid://ch1003hewhq04" path="res://icon.svg" id="2_oai81"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_piqgn"]
+size = Vector2(24.25, 79.5)
+
+[node name="direction sign" type="Node"]
+script = ExtResource("1_piqgn")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -68)
+scale = Vector2(0.12499999, 0.609375)
+texture = ExtResource("2_oai81")
+
+[node name="InteractionArea" parent="." instance=ExtResource("1_jqg52")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+position = Vector2(0, -69)
+shape = SubResource("RectangleShape2D_piqgn")
