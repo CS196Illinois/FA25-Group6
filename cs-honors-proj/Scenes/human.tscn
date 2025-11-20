@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://cv3om3vpm206i"]
+[gd_scene load_steps=24 format=3 uid="uid://d3kwkixntv6is"]
 
 [ext_resource type="Script" uid="uid://b511xfvpn0iuo" path="res://Script/human.gd" id="1_woi7x"]
 [ext_resource type="Texture2D" uid="uid://di64s7xpittlc" path="res://Asset/sprite/HMMWalkBare.png" id="1_ytu0o"]

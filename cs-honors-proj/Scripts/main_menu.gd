@@ -12,8 +12,8 @@ func _on_continue_button_pressed() -> void:
 	print("Loading save files!")
 	
 func _on_new_game_button_pressed() -> void:
-	# button_press_sfx.play()
-	print("Creating new game!")
+	#button_press_sfx.play()
+	get_tree().change_scene_to_file("res://DemoScene/games.tscn")
 
 func _on_options_button_pressed() -> void:
 	# button_press_sfx.play()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cugie8ht3ax5p"]
+[gd_scene load_steps=9 format=3 uid="uid://cugie8ht3ax5p"]
 
 [ext_resource type="Texture2D" uid="uid://bp3m8aq83w0n8" path="res://Assets/squirrelgame_logo_temp.png" id="1_opfnp"]
 [ext_resource type="Texture2D" uid="uid://hovaq7yyr50h" path="res://Assets/continue_temp.png" id="2_cp0ys"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://ba5kde7k1htur" path="res://Assets/newgame_temp.png" id="3_yhxw7"]
 [ext_resource type="Texture2D" uid="uid://dirsvoe7aqjx1" path="res://Assets/options_temp.png" id="4_trj04"]
 [ext_resource type="Texture2D" uid="uid://6j8uw7bouhm" path="res://Assets/tutorial_temp.png" id="5_16hvj"]
+[ext_resource type="Script" uid="uid://do4sv34pfe71c" path="res://Scenes/new_game_button.gd" id="5_yhxw7"]
 [ext_resource type="Texture2D" uid="uid://c76h2ixcx4ao5" path="res://Assets/quit_temp.png" id="6_vr1f0"]
 
 [node name="MainMenu" type="Control"]
@@ -64,6 +65,7 @@ custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
 texture_normal = ExtResource("3_yhxw7")
 stretch_mode = 4
+script = ExtResource("5_yhxw7")
 
 [node name="OptionsButton" type="TextureButton" parent="CenterContainer/MarginContainer/VBoxContainer/MenuOptions"]
 custom_minimum_size = Vector2(0, 60)
