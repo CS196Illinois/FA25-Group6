@@ -1,26 +1,102 @@
-[gd_scene load_steps=2 format=3 uid="uid://b8bj013u4te62"]
+[gd_scene load_steps=9 format=3 uid="uid://cugie8ht3ax5p"]
 
-[ext_resource type="Texture2D" uid="uid://b7oqnjja5g4uu" path="res://Assets/i_logo.png" id="1_28flt"]
+[ext_resource type="Script" uid="uid://5enxncpdj206" path="res://Scripts/main_menu.gd" id="1_cp0ys"]
+[ext_resource type="Texture2D" uid="uid://bnvwtjmresydl" path="res://Asset/sprite/squirrelgame_logo_temp.png" id="1_m2i0g"]
+[ext_resource type="Texture2D" uid="uid://6r8vm8xrd5sc" path="res://Asset/sprite/continue_temp.png" id="2_c7pkw"]
+[ext_resource type="Texture2D" uid="uid://dyr5xy56bvgoy" path="res://Asset/sprite/newgame_temp.png" id="3_4wt41"]
+[ext_resource type="Texture2D" uid="uid://cqci33jlo3a64" path="res://Asset/sprite/options_temp.png" id="4_lmexq"]
+[ext_resource type="Texture2D" uid="uid://b7pdm3blewvm7" path="res://Asset/sprite/tutorial_temp.png" id="5_lrd0t"]
+[ext_resource type="Texture2D" uid="uid://cxlii0ldy23vk" path="res://Asset/sprite/quit_temp.png" id="6_pjj10"]
+[ext_resource type="AudioStream" uid="uid://b24fqt3vv0jio" path="res://Assets/Audio/button_press_1.mp3" id="8_yhxw7"]
 
-[node name="MainMenu" type="MarginContainer"]
+[node name="MainMenu" type="Control"]
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_cp0ys")
 
-[node name="TextureRect" type="TextureRect" parent="."]
-layout_mode = 2
-texture = ExtResource("1_28flt")
-stretch_mode = 2
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 120
+theme_override_constants/margin_top = 80
+theme_override_constants/margin_right = 120
+theme_override_constants/margin_bottom = 80
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
-size_flags_horizontal = 0
+theme_override_constants/separation = 32
 alignment = 1
 
-[node name="Button" type="Button" parent="VBoxContainer"]
+[node name="Logo" type="TextureRect" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(100, 200)
 layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.0
+texture = ExtResource("1_m2i0g")
+expand_mode = 3
 
-[node name="Button2" type="Button" parent="VBoxContainer"]
+[node name="MenuOptions" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.0
+theme_override_constants/separation = 1
+
+[node name="ContinueButton" type="TextureButton" parent="MarginContainer/VBoxContainer/MenuOptions"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+focus_neighbor_top = NodePath("../QuitButton")
+texture_normal = ExtResource("2_c7pkw")
+stretch_mode = 5
+
+[node name="NewGameButton" type="TextureButton" parent="MarginContainer/VBoxContainer/MenuOptions"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+texture_normal = ExtResource("3_4wt41")
+stretch_mode = 5
+
+[node name="OptionsButton" type="TextureButton" parent="MarginContainer/VBoxContainer/MenuOptions"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+texture_normal = ExtResource("4_lmexq")
+stretch_mode = 5
+
+[node name="TutorialButton" type="TextureButton" parent="MarginContainer/VBoxContainer/MenuOptions"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+texture_normal = ExtResource("5_lrd0t")
+stretch_mode = 5
+
+[node name="QuitButton" type="TextureButton" parent="MarginContainer/VBoxContainer/MenuOptions"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+texture_normal = ExtResource("6_pjj10")
+stretch_mode = 5
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -1
+layout_mode = 0
+offset_right = 1282.0
+offset_bottom = 723.0
+mouse_filter = 2
+color = Color(0.5400049, 0.71692884, 0.9999998, 1)
+
+[node name="ButtonPressSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_yhxw7")
+bus = &"MenuButtons"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/MenuOptions/ContinueButton" to="." method="_on_continue_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/MenuOptions/NewGameButton" to="." method="_on_new_game_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/MenuOptions/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/MenuOptions/TutorialButton" to="." method="_on_tutorial_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/MenuOptions/QuitButton" to="." method="_on_quit_button_pressed"]
