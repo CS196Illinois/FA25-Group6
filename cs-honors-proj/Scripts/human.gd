@@ -17,7 +17,7 @@ func _process(delta: float) -> void:
 #for interacting
 var player_enter = false #check player enter the body
 var be_scared = false # ensure only change direction once
-@onready var coin_scene: PackedScene = preload("res://Scene/coin.tscn")
+@onready var coin_scene: PackedScene = preload("res://Scenes/coin.tscn")
 var first = true #check for interact second time
 @onready var hurt_sounds: AudioStreamPlayer = $hurt
 
