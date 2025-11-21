@@ -1,6 +1,5 @@
-[gd_scene load_steps=22 format=3 uid="uid://budi2sqeikeo6"]
+[gd_scene load_steps=21 format=3 uid="uid://budi2sqeikeo6"]
 
-[ext_resource type="PackedScene" uid="uid://cgqtlonm2cm3i" path="res://Scenes/player.tscn" id="1_7klgh"]
 [ext_resource type="Script" uid="uid://db4f0v7l37sek" path="res://Scripts/game_manager.gd" id="1_b7axg"]
 [ext_resource type="FontFile" uid="uid://jsn1r6hmqnfw" path="res://DemoAsset/fonts/PixelOperator8-Bold.ttf" id="2_1bd3e"]
 [ext_resource type="Texture2D" uid="uid://c2dypa2rwxa70" path="res://DemoAsset/sprite/City background.png" id="3_dlpat"]
@@ -1049,17 +1048,14 @@ position = Vector2(24.5, -108)
 scale = Vector2(1.3701172, 1.4566474)
 texture = ExtResource("3_dlpat")
 
-[node name="player" parent="." instance=ExtResource("1_7klgh")]
-position = Vector2(-93, -1)
-
-[node name="player#Camera2D" type="Camera2D" parent="player"]
-position = Vector2(-0.22063874, -7.945501)
-scale = Vector2(0.10800998, 0.1168456)
+[node name="player#Camera2D" type="Camera2D" parent="."]
+position = Vector2(0.32864872, -23.244226)
+scale = Vector2(0.32864872, 0.34182686)
 zoom = Vector2(3, 3)
-limit_left = -487
-limit_top = -173
-limit_right = 453
-limit_bottom = 137
+limit_left = -440
+limit_top = -170
+limit_right = 500
+limit_bottom = 140
 limit_smoothed = true
 position_smoothing_enabled = true
 

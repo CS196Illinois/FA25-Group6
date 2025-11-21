@@ -11,14 +11,14 @@ config_version=5
 [application]
 
 config/name="CS Honors Proj"
-run/main_scene="uid://gt3u1y3gne8e"
+run/main_scene="uid://cugie8ht3ax5p"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
-GameManager="*res://DemoScript/game_manager.gd"
+GameManager="*res://Scripts/game_manager.gd"
 
 [dialogic]
 

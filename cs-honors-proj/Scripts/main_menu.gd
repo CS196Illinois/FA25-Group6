@@ -13,7 +13,7 @@ func _on_continue_button_pressed() -> void:
 	
 func _on_new_game_button_pressed() -> void:
 	#button_press_sfx.play()
-	get_tree().change_scene_to_file("res://DemoScene/games.tscn")
+	get_tree().change_scene_to_file("res://Scenes/games.tscn")
 
 func _on_options_button_pressed() -> void:
 	# button_press_sfx.play()

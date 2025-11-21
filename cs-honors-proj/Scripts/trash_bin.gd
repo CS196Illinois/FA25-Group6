@@ -3,7 +3,7 @@ extends Area2D
 var player_in_area = false
 @onready var pickupsound: AudioStreamPlayer = $pickupsound
 var first = true #test if player leave the trashbin before next interact
-@onready var coin_scene: PackedScene = preload("res://Scene/coin.tscn")
+@onready var coin_scene: PackedScene = preload("res://Scenes/coin.tscn")
 var current_coin: Node = null #test if already have coin created
 #add CD to pickup coins from trashbin
 @onready var cd: Timer = $CD

@@ -1,10 +1,10 @@
-[gd_scene load_steps=24 format=3 uid="uid://d3kwkixntv6is"]
+[gd_scene load_steps=24 format=3 uid="uid://cn3m8cgjxl10y"]
 
-[ext_resource type="Script" uid="uid://b511xfvpn0iuo" path="res://Script/human.gd" id="1_woi7x"]
-[ext_resource type="Texture2D" uid="uid://di64s7xpittlc" path="res://Asset/sprite/HMMWalkBare.png" id="1_ytu0o"]
-[ext_resource type="Texture2D" uid="uid://bu8112p7vvcww" path="res://Asset/sprite/HMMHurtBare.png" id="2_tunnn"]
-[ext_resource type="Texture2D" uid="uid://6mifj5kbotrx" path="res://Asset/sprite/HMMRunBare.png" id="4_p1u2g"]
-[ext_resource type="AudioStream" uid="uid://icmjynt0kgpn" path="res://Asset/sounds/hurt.wav" id="5_p1u2g"]
+[ext_resource type="Script" uid="uid://b511xfvpn0iuo" path="res://Scripts/human.gd" id="1_woi7x"]
+[ext_resource type="Texture2D" uid="uid://di64s7xpittlc" path="res://DemoAsset/sprite/HMMWalkBare.png" id="1_ytu0o"]
+[ext_resource type="Texture2D" uid="uid://bu8112p7vvcww" path="res://DemoAsset/sprite/HMMHurtBare.png" id="2_tunnn"]
+[ext_resource type="Texture2D" uid="uid://6mifj5kbotrx" path="res://DemoAsset/sprite/HMMRunBare.png" id="4_p1u2g"]
+[ext_resource type="AudioStream" uid="uid://icmjynt0kgpn" path="res://DemoAsset/sounds/hurt.wav" id="5_p1u2g"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yxhyb"]
 atlas = ExtResource("2_tunnn")

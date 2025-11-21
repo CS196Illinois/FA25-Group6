@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://crau8b5fv3xqb"
-path="res://.godot/imported/Squirrel Sprite Sheet.png-768279abb825bd622968cac6559657cf.ctex"
+path="res://.godot/imported/Squirrel Sprite Sheet.png-962183104137adc53ded214ed2cc9d20.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Asset/sprite/Squirrel Sprite Sheet.png"
-dest_files=["res://.godot/imported/Squirrel Sprite Sheet.png-768279abb825bd622968cac6559657cf.ctex"]
+source_file="res://Assets/sprite/Squirrel Sprite Sheet.png"
+dest_files=["res://.godot/imported/Squirrel Sprite Sheet.png-962183104137adc53ded214ed2cc9d20.ctex"]
 
 [params]
 

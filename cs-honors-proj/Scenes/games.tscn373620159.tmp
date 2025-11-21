@@ -1,19 +1,18 @@
-[gd_scene load_steps=22 format=3 uid="uid://budi2sqeikeo6"]
+[gd_scene load_steps=21 format=3 uid="uid://budi2sqeikeo6"]
 
-[ext_resource type="PackedScene" uid="uid://cgqtlonm2cm3i" path="res://DemoScene/player.tscn" id="1_7klgh"]
-[ext_resource type="Script" uid="uid://db4f0v7l37sek" path="res://DemoScript/game_manager.gd" id="1_nqbdr"]
+[ext_resource type="Script" uid="uid://db4f0v7l37sek" path="res://Scripts/game_manager.gd" id="1_nqbdr"]
 [ext_resource type="Texture2D" uid="uid://c2dypa2rwxa70" path="res://DemoAsset/sprite/City background.png" id="1_ydtro"]
 [ext_resource type="FontFile" uid="uid://jsn1r6hmqnfw" path="res://DemoAsset/fonts/PixelOperator8-Bold.ttf" id="2_5ol08"]
 [ext_resource type="Texture2D" uid="uid://bgb3v4p31urbh" path="res://DemoAsset/sprite/Building Tiles 32x32.png" id="2_a8ql5"]
 [ext_resource type="Texture2D" uid="uid://cggewjte85shw" path="res://DemoAsset/sprite/GandalfHardcore city tiles 32x32.png" id="3_cge5g"]
 [ext_resource type="Texture2D" uid="uid://pl18dlimyjj0" path="res://DemoAsset/sprite/Decoration 32x32.png" id="4_qpxvt"]
 [ext_resource type="Texture2D" uid="uid://d2jwls7xqng8a" path="res://DemoAsset/sprite/world_tileset.png" id="5_cge5g"]
-[ext_resource type="PackedScene" uid="uid://xmkd4ar5x838" path="res://DemoScene/plantform.tscn" id="6_qpxvt"]
-[ext_resource type="PackedScene" uid="uid://blwp71h10qy7" path="res://DemoScene/killzone.tscn" id="7_k58gd"]
-[ext_resource type="PackedScene" uid="uid://cl72d1gw2hdi3" path="res://DemoScene/trash_bin.tscn" id="7_r3qop"]
+[ext_resource type="PackedScene" uid="uid://cl72d1gw2hdi3" path="res://trash_bin.tscn" id="8_ubc2i"]
+[ext_resource type="PackedScene" uid="uid://xmkd4ar5x838" path="res://plantform.tscn" id="9_k5ahu"]
 [ext_resource type="FontFile" uid="uid://dc3ttbrhos674" path="res://DemoAsset/fonts/PixelOperator8.ttf" id="9_nx24y"]
-[ext_resource type="PackedScene" uid="uid://14i8l5ukgofn" path="res://DemoScene/DialogeTrashBin.tscn" id="10_ipgdv"]
-[ext_resource type="PackedScene" uid="uid://bxsuegw53on7u" path="res://DemoScene/coin.tscn" id="12_6qr1j"]
+[ext_resource type="PackedScene" uid="uid://blwp71h10qy7" path="res://Scenes/killzone.tscn" id="10_oj8f6"]
+[ext_resource type="PackedScene" uid="uid://bxsuegw53on7u" path="res://Scenes/coin.tscn" id="12_6qr1j"]
+[ext_resource type="PackedScene" uid="uid://14i8l5ukgofn" path="res://Scenes/DialogeTrashBin.tscn" id="13_m2u23"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k58gd"]
 texture = ExtResource("2_a8ql5")
@@ -1049,10 +1048,7 @@ position = Vector2(24.5, -108)
 scale = Vector2(1.3701172, 1.4566474)
 texture = ExtResource("1_ydtro")
 
-[node name="player" parent="." instance=ExtResource("1_7klgh")]
-position = Vector2(-88, 80)
-
-[node name="Camera2D" type="Camera2D" parent="player"]
+[node name="player#Camera2D" type="Camera2D" parent="."]
 position = Vector2(0.32864872, -23.244226)
 scale = Vector2(0.32864872, 0.34182686)
 zoom = Vector2(3, 3)
@@ -1075,60 +1071,60 @@ layer_2/tile_data = PackedInt32Array(-19, 786434, 2, 65517, 786434, 3, -18, 8519
 layer_3/name = "Symbols"
 layer_3/tile_data = PackedInt32Array(131071, 196610, 4, -11, 196610, 2)
 
-[node name="trashBIn" parent="." instance=ExtResource("7_r3qop")]
+[node name="trashBIn" parent="." instance=ExtResource("8_ubc2i")]
 position = Vector2(352, 65)
 
 [node name="Plantforms" type="Node" parent="."]
 
-[node name="plantform" parent="Plantforms" instance=ExtResource("6_qpxvt")]
+[node name="plantform" parent="Plantforms" instance=ExtResource("9_k5ahu")]
 position = Vector2(-201, 50)
 scale = Vector2(0.9235213, 0.9493634)
 
-[node name="plantform2" parent="Plantforms" instance=ExtResource("6_qpxvt")]
+[node name="plantform2" parent="Plantforms" instance=ExtResource("9_k5ahu")]
 position = Vector2(-201, 18.000004)
 scale = Vector2(0.9235213, 0.9493634)
 
-[node name="plantform3" parent="Plantforms" instance=ExtResource("6_qpxvt")]
+[node name="plantform3" parent="Plantforms" instance=ExtResource("9_k5ahu")]
 position = Vector2(24, 55)
 scale = Vector2(0.9235213, 0.9493634)
 
-[node name="plantform4" parent="Plantforms" instance=ExtResource("6_qpxvt")]
+[node name="plantform4" parent="Plantforms" instance=ExtResource("9_k5ahu")]
 position = Vector2(249, 57)
 scale = Vector2(0.9235213, 0.9493634)
 
-[node name="plantform5" parent="Plantforms" instance=ExtResource("6_qpxvt")]
+[node name="plantform5" parent="Plantforms" instance=ExtResource("9_k5ahu")]
 position = Vector2(265, 29)
 scale = Vector2(0.9235213, 0.9493634)
 
-[node name="plantform7" parent="Plantforms" instance=ExtResource("6_qpxvt")]
+[node name="plantform7" parent="Plantforms" instance=ExtResource("9_k5ahu")]
 position = Vector2(319, 58)
 scale = Vector2(0.9235213, 0.9493634)
 
-[node name="plantform8" parent="Plantforms" instance=ExtResource("6_qpxvt")]
+[node name="plantform8" parent="Plantforms" instance=ExtResource("9_k5ahu")]
 position = Vector2(379, 51)
 scale = Vector2(0.9235213, 0.9493634)
 
-[node name="plantform9" parent="Plantforms" instance=ExtResource("6_qpxvt")]
+[node name="plantform9" parent="Plantforms" instance=ExtResource("9_k5ahu")]
 position = Vector2(389, 51.000004)
 scale = Vector2(0.9235213, 0.9493634)
 
-[node name="plantform10" parent="Plantforms" instance=ExtResource("6_qpxvt")]
+[node name="plantform10" parent="Plantforms" instance=ExtResource("9_k5ahu")]
 position = Vector2(408, 15.000004)
 scale = Vector2(0.9235213, 0.9493634)
 
-[node name="plantform11" parent="Plantforms" instance=ExtResource("6_qpxvt")]
+[node name="plantform11" parent="Plantforms" instance=ExtResource("9_k5ahu")]
 position = Vector2(423, 15.000001)
 scale = Vector2(0.9235213, 0.9493634)
 
-[node name="plantform12" parent="Plantforms" instance=ExtResource("6_qpxvt")]
+[node name="plantform12" parent="Plantforms" instance=ExtResource("9_k5ahu")]
 position = Vector2(423, 15.000001)
 scale = Vector2(0.9235213, 0.9493634)
 
-[node name="plantform6" parent="Plantforms" instance=ExtResource("6_qpxvt")]
+[node name="plantform6" parent="Plantforms" instance=ExtResource("9_k5ahu")]
 position = Vector2(279, 29)
 scale = Vector2(0.9235213, 0.9493634)
 
-[node name="killzone2" parent="." instance=ExtResource("7_k58gd")]
+[node name="killzone2" parent="." instance=ExtResource("10_oj8f6")]
 position = Vector2(-430, -4)
 rotation = -1.5820698
 
@@ -1137,7 +1133,7 @@ position = Vector2(1.2897073, 950.07495)
 rotation = -6.2685833
 shape = SubResource("WorldBoundaryShape2D_ydtro")
 
-[node name="killzone" parent="." instance=ExtResource("7_k58gd")]
+[node name="killzone" parent="." instance=ExtResource("10_oj8f6")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="killzone"]
 position = Vector2(-455.99994, -7.999999)
@@ -1170,5 +1166,5 @@ text = "Move: A / D
 Jump: Space
 Interact: K"
 
-[node name="DialogTrashBin" parent="." instance=ExtResource("10_ipgdv")]
+[node name="DialogTrashBin" parent="." instance=ExtResource("13_m2u23")]
 position = Vector2(-191, 69)
