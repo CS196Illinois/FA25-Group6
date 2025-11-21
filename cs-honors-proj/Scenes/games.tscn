@@ -1,7 +1,8 @@
-[gd_scene load_steps=22 format=3 uid="uid://budi2sqeikeo6"]
+[gd_scene load_steps=23 format=3 uid="uid://budi2sqeikeo6"]
 
 [ext_resource type="PackedScene" uid="uid://cgqtlonm2cm3i" path="res://Scenes/player.tscn" id="1_7klgh"]
 [ext_resource type="Script" uid="uid://db4f0v7l37sek" path="res://Scripts/game_manager.gd" id="1_b7axg"]
+[ext_resource type="Script" uid="uid://b8mj6swp5y5aq" path="res://Scenes/games.gd" id="1_oj8f6"]
 [ext_resource type="FontFile" uid="uid://jsn1r6hmqnfw" path="res://DemoAsset/fonts/PixelOperator8-Bold.ttf" id="2_1bd3e"]
 [ext_resource type="Texture2D" uid="uid://c2dypa2rwxa70" path="res://DemoAsset/sprite/City background.png" id="3_dlpat"]
 [ext_resource type="Texture2D" uid="uid://bgb3v4p31urbh" path="res://DemoAsset/sprite/Building Tiles 32x32.png" id="4_cydna"]
@@ -1030,6 +1031,7 @@ sources/4 = SubResource("TileSetAtlasSource_qpxvt")
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_nx24y"]
 
 [node name="Games" type="Node2D"]
+script = ExtResource("1_oj8f6")
 
 [node name="GameManager" type="Node" parent="."]
 unique_name_in_owner = true
