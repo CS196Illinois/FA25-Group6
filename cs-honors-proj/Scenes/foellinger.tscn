@@ -1,10 +1,10 @@
 [gd_scene load_steps=15 format=3 uid="uid://cst33ec5wbx1d"]
 
-[ext_resource type="Script" uid="uid://doyrewgtbc8dt" path="res://scripts/level.gd" id="1_prlsm"]
+[ext_resource type="Script" uid="uid://doyrewgtbc8dt" path="res://Scripts/level.gd" id="1_prlsm"]
 [ext_resource type="Texture2D" uid="uid://30xee3lu63u8" path="res://assets/UIUC_Tilemap_4.png" id="1_tu7j6"]
-[ext_resource type="PackedScene" uid="uid://bcicrkj40xdph" path="res://scenes/player.tscn" id="2_l6v3y"]
-[ext_resource type="Script" uid="uid://wg715xml4syt" path="res://scripts/area_2d1.gd" id="3_l6v3y"]
-[ext_resource type="PackedScene" uid="uid://d30h0h1xinlta" path="res://scenes/door.tscn" id="5_prlsm"]
+[ext_resource type="PackedScene" uid="uid://bcicrkj40xdph" path="res://Scenes/player.tscn" id="2_l6v3y"]
+[ext_resource type="Script" uid="uid://wg715xml4syt" path="res://Scripts/area_2d1.gd" id="3_l6v3y"]
+[ext_resource type="PackedScene" uid="uid://d30h0h1xinlta" path="res://Scenes/door.tscn" id="5_prlsm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uilh5"]
 texture = ExtResource("1_tu7j6")

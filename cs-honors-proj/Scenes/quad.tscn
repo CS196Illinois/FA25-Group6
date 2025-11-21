@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=3 uid="uid://dxg20fa12du4p"]
 
 [ext_resource type="Texture2D" uid="uid://30xee3lu63u8" path="res://assets/UIUC_Tilemap_4.png" id="1_0r54i"]
-[ext_resource type="Script" uid="uid://doyrewgtbc8dt" path="res://scripts/level.gd" id="1_ofjc2"]
-[ext_resource type="PackedScene" uid="uid://bcicrkj40xdph" path="res://scenes/player.tscn" id="2_7q3og"]
-[ext_resource type="PackedScene" uid="uid://d30h0h1xinlta" path="res://scenes/door.tscn" id="4_ofjc2"]
+[ext_resource type="Script" uid="uid://doyrewgtbc8dt" path="res://Scripts/level.gd" id="1_ofjc2"]
+[ext_resource type="PackedScene" uid="uid://bcicrkj40xdph" path="res://Scenes/player.tscn" id="2_7q3og"]
+[ext_resource type="PackedScene" uid="uid://d30h0h1xinlta" path="res://Scenes/door.tscn" id="4_ofjc2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ofjc2"]
 texture = ExtResource("1_0r54i")
