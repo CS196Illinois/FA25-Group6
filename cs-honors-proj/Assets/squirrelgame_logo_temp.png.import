@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bp3m8aq83w0n8"
-path="res://.godot/imported/squirrelgame_logo_temp.png-b6aa2ac127af7848d8228cd231387f37.ctex"
+path="res://.godot/imported/squirrelgame_logo_temp.png-11921179bc1e0a507de34005326197a1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/squirrelgame_logo_temp.png"
-dest_files=["res://.godot/imported/squirrelgame_logo_temp.png-b6aa2ac127af7848d8228cd231387f37.ctex"]
+source_file="res://Assets/squirrelgame_logo_temp.png"
+dest_files=["res://.godot/imported/squirrelgame_logo_temp.png-11921179bc1e0a507de34005326197a1.ctex"]
 
 [params]
 

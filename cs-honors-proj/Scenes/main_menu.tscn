@@ -100,6 +100,7 @@ offset_right = 574.0
 offset_bottom = 324.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 color = Color(0.4644646, 0.8934707, 0.99033564, 1)
 
 [connection signal="pressed" from="CenterContainer/MarginContainer/VBoxContainer/MenuOptions/ContinueButton" to="." method="_on_continue_button_pressed"]
