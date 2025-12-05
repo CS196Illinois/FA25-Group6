@@ -1038,6 +1038,7 @@ unique_name_in_owner = true
 script = ExtResource("1_b7axg")
 
 [node name="ScoreLabel" type="Label" parent="GameManager"]
+visible = false
 offset_left = -128.0
 offset_top = -32.0
 offset_right = -16.0
@@ -1052,6 +1053,7 @@ scale = Vector2(1.3701172, 1.4566474)
 texture = ExtResource("3_dlpat")
 
 [node name="player" parent="." instance=ExtResource("1_7klgh")]
+z_index = 15
 position = Vector2(-93, -1)
 
 [node name="player#Camera2D" type="Camera2D" parent="player"]
