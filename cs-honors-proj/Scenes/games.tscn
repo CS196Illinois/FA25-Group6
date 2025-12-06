@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://budi2sqeikeo6"]
+[gd_scene load_steps=24 format=3 uid="uid://budi2sqeikeo6"]
 
 [ext_resource type="PackedScene" uid="uid://cgqtlonm2cm3i" path="res://Scenes/player.tscn" id="1_7klgh"]
 [ext_resource type="Script" uid="uid://db4f0v7l37sek" path="res://Scripts/game_manager.gd" id="1_b7axg"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://bxsuegw53on7u" path="res://Scenes/coin.tscn" id="11_roo15"]
 [ext_resource type="FontFile" uid="uid://dc3ttbrhos674" path="res://DemoAsset/fonts/PixelOperator8.ttf" id="12_vequr"]
 [ext_resource type="PackedScene" uid="uid://14i8l5ukgofn" path="res://Scenes/DialogeTrashBin.tscn" id="13_i1cw6"]
+[ext_resource type="Script" uid="uid://djm7yavcktf5n" path="res://Scenes/changingToQuad.gd" id="13_m2u23"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k58gd"]
 texture = ExtResource("4_cydna")
@@ -1052,7 +1053,7 @@ scale = Vector2(1.3701172, 1.4566474)
 texture = ExtResource("3_dlpat")
 
 [node name="player" parent="." instance=ExtResource("1_7klgh")]
-position = Vector2(-93, -1)
+position = Vector2(-95, 82)
 
 [node name="player#Camera2D" type="Camera2D" parent="player"]
 position = Vector2(-0.22063874, -7.945501)
@@ -1133,16 +1134,18 @@ scale = Vector2(0.9235213, 0.9493634)
 [node name="killzone2" parent="." instance=ExtResource("10_m7ert")]
 position = Vector2(-430, -4)
 rotation = -1.5820698
+script = ExtResource("13_m2u23")
+next_scene_path = "res://Scenes/quad.tscn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="killzone2"]
-position = Vector2(1.2897073, 950.07495)
+position = Vector2(1.6955428, 914.07715)
 rotation = -6.2685833
 shape = SubResource("WorldBoundaryShape2D_ydtro")
 
 [node name="killzone" parent="." instance=ExtResource("10_m7ert")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="killzone"]
-position = Vector2(-455.99994, -7.999999)
+position = Vector2(-436.99997, -8.999999)
 rotation = -4.704788
 shape = SubResource("WorldBoundaryShape2D_nx24y")
 

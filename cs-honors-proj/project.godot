@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 GameManager="*res://Scripts/game_manager.gd"
+NavigationManager="*res://Scripts/navigation_manager.gd"
 
 [dialogic]
 
@@ -34,6 +35,9 @@ directories/dtl_directory={
 "talkAgain": "res://DemoDialog/timeline/talkAgain.dtl"
 }
 layout/style_directory={}
+variables={
+"name": ""
+}
 
 [dotnet]
 
