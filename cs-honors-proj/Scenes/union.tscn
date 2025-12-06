@@ -1,10 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://toe2nweb8qfk"]
+[gd_scene load_steps=8 format=3 uid="uid://toe2nweb8qfk"]
 
-[ext_resource type="Texture2D" uid="uid://30xee3lu63u8" path="res://assets/UIUC_Tilemap_4.png" id="1_j2ctn"]
-[ext_resource type="Script" uid="uid://doyrewgtbc8dt" path="res://scripts/level.gd" id="1_wpfjs"]
-[ext_resource type="PackedScene" uid="uid://bcicrkj40xdph" path="res://scenes/player.tscn" id="2_j2ctn"]
-[ext_resource type="PackedScene" uid="uid://d30h0h1xinlta" path="res://scenes/door.tscn" id="4_wpfjs"]
-[ext_resource type="PackedScene" uid="uid://diw3ir3x2uswa" path="res://scenes/direction_sign.tscn" id="5_qmiqa"]
+[ext_resource type="Texture2D" uid="uid://30xee3lu63u8" path="res://Assets/UIUC_Tilemap_4.png" id="1_j2ctn"]
+[ext_resource type="Script" uid="uid://doyrewgtbc8dt" path="res://Scripts/level.gd" id="1_wpfjs"]
+[ext_resource type="PackedScene" uid="uid://cgqtlonm2cm3i" path="res://scenes/player.tscn" id="2_j2ctn"]
+[ext_resource type="PackedScene" uid="uid://d30h0h1xinlta" path="res://Scenes/door.tscn" id="4_wpfjs"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_juhlc"]
 texture = ExtResource("1_j2ctn")
@@ -235,14 +234,5 @@ disabled = true
 [node name="Spawn" parent="Doors/Door_R" index="1"]
 position = Vector2(289, -1)
 
-[node name="direction sign" parent="." instance=ExtResource("5_qmiqa")]
-
-[node name="Sprite2D" parent="direction sign" index="0"]
-position = Vector2(315, -38)
-
-[node name="CollisionShape2D" parent="direction sign/InteractionArea" index="0"]
-position = Vector2(315, -40)
-
 [editable path="Doors/Door_L"]
 [editable path="Doors/Door_R"]
-[editable path="direction sign"]

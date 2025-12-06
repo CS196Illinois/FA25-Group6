@@ -4,17 +4,26 @@ extends Node
 @onready var score_label: Label = $ScoreLabel
 var score = 0
 var first_reach_amount = true;
+var is_in_dialogue = false;
 #prevent repeated dialogue
 func start_game():
 	#connect autoload GameManager to find ScoreLabel
 	score_label = get_tree().get_root().find_child("ScoreLabel", true, false)
 	#connect dialogic signal and begining initial dialog
 	Dialogic.signal_event.connect(_on_dialogic_signal)
+	Dialogic.timeline_started.connect(_on_timeline_started)
+	Dialogic.timeline_ended.connect(_on_timeline_ended)
+	#avoid character moving during the dialog
 	Dialogic.start("beginning")
+
+func _on_timeline_started():
+	is_in_dialogue = true
+#check if dialog is processing
+func _on_timeline_ended():
+	is_in_dialogue = false
 
 #count coins
 func add_point():
-	print("get")
 	score += 1
 	if score_label:
 		score_label.text = "Coins: " + str(score)

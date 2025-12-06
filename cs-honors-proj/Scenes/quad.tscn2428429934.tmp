@@ -280,8 +280,6 @@ destination_door_tag = "R"
 spawn_direction = "right"
 
 [node name="CollisionShape2D" parent="Doors/Door_L" index="0"]
-light_mask = 3
-visibility_layer = 3
 position = Vector2(1, -5)
 
 [node name="Spawn" parent="Doors/Door_L" index="1"]
