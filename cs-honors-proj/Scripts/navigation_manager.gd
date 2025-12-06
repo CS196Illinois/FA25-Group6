@@ -1,8 +1,8 @@
 extends Node
 
-const scene_foellinger = preload("res://scenes/foellinger.tscn")
-const scene_quad = preload("res://scenes/quad.tscn")
-const scene_union = preload("res://scenes/union.tscn")
+const scene_foellinger = preload("res://Scenes/foellinger.tscn")
+const scene_quad = preload("res://Scenes/quad.tscn")
+const scene_union = preload("res://Scenes/union.tscn")
 
 signal on_trigger_player_spawn
 

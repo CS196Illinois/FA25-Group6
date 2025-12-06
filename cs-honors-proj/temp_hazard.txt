@@ -1,0 +1,9 @@
+[node name="MovingHazard3" parent="Hazards" instance=ExtResource("5_hazard")]
+position = Vector2(-50, -100)
+
+[node name="GroundHazard" parent="Hazards" instance=ExtResource("5_hazard")]
+position = Vector2(-100, -16)
+move_speed = 70.0
+move_distance = 200.0
+
+[node name="Doors" type="Node" parent="."]
