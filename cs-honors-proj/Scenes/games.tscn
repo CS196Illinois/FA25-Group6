@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://budi2sqeikeo6"]
+[gd_scene load_steps=27 format=3 uid="uid://budi2sqeikeo6"]
 
 [ext_resource type="PackedScene" uid="uid://cgqtlonm2cm3i" path="res://Scenes/player.tscn" id="1_7klgh"]
 [ext_resource type="Script" uid="uid://db4f0v7l37sek" path="res://Scripts/game_manager.gd" id="1_b7axg"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://c2dypa2rwxa70" path="res://DemoAsset/sprite/City background.png" id="3_dlpat"]
 [ext_resource type="Texture2D" uid="uid://bgb3v4p31urbh" path="res://DemoAsset/sprite/Building Tiles 32x32.png" id="4_cydna"]
 [ext_resource type="Texture2D" uid="uid://cggewjte85shw" path="res://DemoAsset/sprite/GandalfHardcore city tiles 32x32.png" id="5_o1ef4"]
+[ext_resource type="Resource" uid="uid://b3v8q1itsxbbm" path="res://Inventory/playerinv.tres" id="6_w3p3s"]
 [ext_resource type="Texture2D" uid="uid://pl18dlimyjj0" path="res://DemoAsset/sprite/Decoration 32x32.png" id="6_xhb6k"]
 [ext_resource type="Texture2D" uid="uid://d2jwls7xqng8a" path="res://DemoAsset/sprite/world_tileset.png" id="7_myud1"]
 [ext_resource type="PackedScene" uid="uid://cl72d1gw2hdi3" path="res://trash_bin.tscn" id="8_vdp5y"]
@@ -16,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://bxsuegw53on7u" path="res://Scenes/coin.tscn" id="11_roo15"]
 [ext_resource type="FontFile" uid="uid://dc3ttbrhos674" path="res://DemoAsset/fonts/PixelOperator8.ttf" id="12_vequr"]
 [ext_resource type="PackedScene" uid="uid://14i8l5ukgofn" path="res://Scenes/DialogeTrashBin.tscn" id="13_i1cw6"]
+[ext_resource type="PackedScene" uid="uid://2hjeruvjv01e" path="res://Inventory/inv_ui.tscn" id="18_c6kcp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k58gd"]
 texture = ExtResource("4_cydna")
@@ -1070,6 +1072,7 @@ texture = ExtResource("3_dlpat")
 [node name="player" parent="." instance=ExtResource("1_7klgh")]
 z_index = 15
 position = Vector2(-93, -1)
+inv = ExtResource("6_w3p3s")
 
 [node name="player#Camera2D" type="Camera2D" parent="player"]
 position = Vector2(-0.22063874, -7.945501)
@@ -1207,3 +1210,7 @@ Interact: K"
 
 [node name="DialogTrashBin" parent="." instance=ExtResource("13_i1cw6")]
 position = Vector2(-191, 69)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Inv_UI" parent="CanvasLayer" instance=ExtResource("18_c6kcp")]

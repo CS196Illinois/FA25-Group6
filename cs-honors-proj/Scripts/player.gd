@@ -7,6 +7,8 @@ const JUMP_VELOCITY = -300.0
 var playing = false
 var birth_position: Vector2
 
+@export var inv: Inv
+
 func _ready():
 	birth_position = position
 	#get birth position for killzone
