@@ -1,8 +1,9 @@
-[gd_scene load_steps=16 format=4 uid="uid://d31660hw6h2s1"]
+[gd_scene load_steps=17 format=4 uid="uid://d31660hw6h2s1"]
 
 [ext_resource type="Texture2D" uid="uid://sqir4msf64ar" path="res://Assets/sprite/dorm_room_spritesheet.png" id="1_2q6nv"]
 [ext_resource type="Texture2D" uid="uid://65okk0ps8254" path="res://Assets/sprite/leaf_tile.png" id="2_5umi5"]
 [ext_resource type="PackedScene" uid="uid://cgqtlonm2cm3i" path="res://Scenes/player.tscn" id="2_7wird"]
+[ext_resource type="Resource" uid="uid://b3v8q1itsxbbm" path="res://Inventory/playerinv.tres" id="4_104uk"]
 [ext_resource type="PackedScene" uid="uid://c7xpghv7d03xv" path="res://Scenes/bed.tscn" id="4_kqe5f"]
 [ext_resource type="PackedScene" uid="uid://dvk5qfap1oyvj" path="res://Scenes/desk.tscn" id="5_mcu3f"]
 
@@ -100,22 +101,6 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_104uk"]
-resource_name = "fade_to_black"
-length = 1.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-
 [sub_resource type="Animation" id="Animation_irlgr"]
 resource_name = "fade_in_from_black"
 length = 1.5
@@ -130,6 +115,22 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_104uk"]
+resource_name = "fade_to_black"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_irlgr"]
@@ -158,6 +159,7 @@ tile_set = SubResource("TileSet_104uk")
 
 [node name="player" parent="." instance=ExtResource("2_7wird")]
 position = Vector2(1, 4)
+inv = ExtResource("4_104uk")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(63, -40)
