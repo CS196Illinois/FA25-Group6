@@ -1,36 +1,20 @@
 extends Node
 
-# time UI
-@onready var canvas_layer: CanvasLayer = $"../CanvasLayer"
-@onready var ui: Control = $"../CanvasLayer/DayNightCycleUI"
-@onready var canvas_modulate: CanvasModulate = $"../CanvasModulate"
-
 #part for score(coin) collecting
 @onready var score_label: Label = $ScoreLabel
 var score = 0
 var first_reach_amount = true;
 #prevent repeated dialogue
-func _ready():
+func start_game():
 	#connect autoload GameManager to find ScoreLabel
 	score_label = get_tree().get_root().find_child("ScoreLabel", true, false)
 	#connect dialogic signal and begining initial dialog
 	Dialogic.signal_event.connect(_on_dialogic_signal)
 	Dialogic.start("beginning")
-	call_deferred("_connect_time_tick")
 
-func _connect_time_tick():
-	if canvas_layer:
-		canvas_layer.visible = true
-	else:
-		push_error("canvas_layer was null when connecting")
-		
-	if canvas_modulate and ui:
-		canvas_modulate.time_tick.connect(ui.set_daytime)
-	else:
-		push_error("UI or canvas_modulate was null when connecting!")
-	
 #count coins
 func add_point():
+	print("get")
 	score += 1
 	if score_label:
 		score_label.text = "Coins: " + str(score)
@@ -57,17 +41,19 @@ func create_human():
 	else:
 		human.position = Vector2(right_create_x, create_y);
 		human.direction = -1;
-	add_child(human) #add our new human
+	add_child(human) 
+	#add our new human
 
 #creat human each 3 seconds
-func _process(delta):
+func human_creating(delta):
 	time_count += delta
 	if time_count >= creat_cd:
 		time_count = 0
 		create_human()
 		
 #add conditional dialog
+func _process(delta: float) -> void:
 	if score == 10 and first_reach_amount:
 		first_reach_amount = false
 		Dialogic.start("coins collection")
-		
+		#

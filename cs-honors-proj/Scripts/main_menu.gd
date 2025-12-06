@@ -9,11 +9,11 @@ func _on_continue_button_pressed() -> void:
 	# button_press_sfx.play()
 	# USE THIS COMAMND TO CHANGE SCENE
 	# get_tree().change_scene_to_file("NAME OF SCENE")
-	print("Loading save files!")
+	get_tree().change_scene_to_file("res://Scenes/dorm_room.tscn")
 	
 func _on_new_game_button_pressed() -> void:
-	# button_press_sfx.play()
-	print("Creating new game!")
+	#button_press_sfx.play()
+	get_tree().change_scene_to_file("res://Scenes/games.tscn")
 
 func _on_options_button_pressed() -> void:
 	# button_press_sfx.play()
