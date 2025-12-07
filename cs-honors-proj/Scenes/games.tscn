@@ -1046,6 +1046,7 @@ sources/3 = SubResource("TileSetAtlasSource_w3p3s")
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ydtro"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_nx24y"]
+distance = -13.999634
 
 [node name="Games" type="Node2D"]
 script = ExtResource("1_oj8f6")
@@ -1078,10 +1079,10 @@ inv = ExtResource("6_w3p3s")
 position = Vector2(-0.22063874, -7.945501)
 scale = Vector2(0.10800998, 0.1168456)
 zoom = Vector2(3, 3)
-limit_left = -616
-limit_top = -173
-limit_right = 553
-limit_bottom = 137
+limit_left = -610
+limit_top = -172
+limit_right = 559
+limit_bottom = 138
 limit_smoothed = true
 position_smoothing_enabled = true
 
@@ -1167,18 +1168,18 @@ position = Vector2(279, 29)
 scale = Vector2(0.9235213, 0.9493634)
 
 [node name="killzone2" parent="." instance=ExtResource("10_m7ert")]
-position = Vector2(-430, -4)
+position = Vector2(-621.9999, 13)
 rotation = -1.5820698
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="killzone2"]
-position = Vector2(-5.172113, 991.00464)
+position = Vector2(-8.528147, 1199.9801)
 rotation = -6.2685833
 shape = SubResource("WorldBoundaryShape2D_ydtro")
 
 [node name="killzone" parent="." instance=ExtResource("10_m7ert")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="killzone"]
-position = Vector2(-595.99994, 13)
+position = Vector2(-608, 13)
 rotation = -4.704788
 shape = SubResource("WorldBoundaryShape2D_nx24y")
 
