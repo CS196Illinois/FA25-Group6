@@ -14,7 +14,9 @@ func start_game():
 	Dialogic.timeline_started.connect(_on_timeline_started)
 	Dialogic.timeline_ended.connect(_on_timeline_ended)
 	#avoid character moving during the dialog
-	Dialogic.start("beginning")
+	if ! GlobalState.intro_played:
+		GlobalState.intro_played = true;
+		Dialogic.start("beginning")
 
 func _on_timeline_started():
 	is_in_dialogue = true
@@ -35,7 +37,7 @@ func _on_dialogic_signal(argument: String):
 # part for npc creating
 @export var human_copy = preload("res://Scenes/human.tscn")
 @export var creat_cd := 3.0  # create humann each 3 seconds
-@export var left_create_x := -550   # create outside left killzone
+@export var left_create_x := -620   # create outside left killzone
 @export var right_create_x := 600   # create outside right killzone
 @export var create_y := 80   # create on ground
 
@@ -50,7 +52,7 @@ func create_human():
 	else:
 		human.position = Vector2(right_create_x, create_y);
 		human.direction = -1;
-	add_child(human) 
+	get_tree().current_scene.add_child(human)
 	#add our new human
 
 #creat human each 3 seconds
@@ -65,4 +67,3 @@ func _process(delta: float) -> void:
 	if score == 10 and first_reach_amount:
 		first_reach_amount = false
 		Dialogic.start("coins collection")
-		#
