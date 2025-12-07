@@ -1,10 +1,12 @@
-[gd_scene load_steps=11 format=3 uid="uid://toe2nweb8qfk"]
+[gd_scene load_steps=13 format=3 uid="uid://toe2nweb8qfk"]
 
 [ext_resource type="Texture2D" uid="uid://30xee3lu63u8" path="res://Assets/UIUC_Tilemap_4.png" id="1_j2ctn"]
 [ext_resource type="Script" uid="uid://doyrewgtbc8dt" path="res://Scripts/level.gd" id="1_wpfjs"]
 [ext_resource type="PackedScene" uid="uid://cgqtlonm2cm3i" path="res://Scenes/player.tscn" id="2_j2ctn"]
 [ext_resource type="PackedScene" uid="uid://d30h0h1xinlta" path="res://Scenes/door.tscn" id="4_wpfjs"]
 [ext_resource type="Script" uid="uid://c6p8onjq4tbc5" path="res://Scripts/tree_interact.gd" id="5_l5jiv"]
+[ext_resource type="PackedScene" uid="uid://blwp71h10qy7" path="res://Scenes/killzone.tscn" id="6_ps6sg"]
+[ext_resource type="Script" uid="uid://dqt34p0cloh0b" path="res://Scripts/left.gd" id="7_kiia7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_juhlc"]
 texture = ExtResource("1_j2ctn")
@@ -182,8 +184,8 @@ distance = -48.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_24doe"]
 size = Vector2(10, 54)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_uvdjg"]
-size = Vector2(20, 166)
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_fsk07"]
+normal = Vector2(-0.0033283187, -0.99999446)
 
 [node name="union" type="Node2D"]
 script = ExtResource("1_wpfjs")
@@ -250,17 +252,15 @@ script = ExtResource("5_l5jiv")
 position = Vector2(-296, -29)
 shape = SubResource("RectangleShape2D_24doe")
 
-[node name="door" parent="." instance=ExtResource("4_wpfjs")]
-position = Vector2(229, 0)
-collision_layer = 1
-collision_mask = 2
-destination_level_tag = "games"
-destination_door_tag = "left"
-spawn_direction = "left"
+[node name="Right" parent="." instance=ExtResource("6_ps6sg")]
+position = Vector2(-430, -4)
+rotation = -1.5820698
+script = ExtResource("7_kiia7")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="door"]
-position = Vector2(1, -73)
-shape = SubResource("RectangleShape2D_uvdjg")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Right"]
+position = Vector2(82.15604, 784.97614)
+rotation = -6.2685833
+shape = SubResource("WorldBoundaryShape2D_fsk07")
 
 [connection signal="body_entered" from="tree_interact" to="tree_interact" method="_on_body_entered"]
 

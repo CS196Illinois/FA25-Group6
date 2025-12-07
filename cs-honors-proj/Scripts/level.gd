@@ -2,6 +2,11 @@ extends Node
 
 
 func _ready() -> void:
+	var spawn_node := $Doors/Door_R/Spawn  
+	match GlobalState.last_scene_name:
+		"games":
+			spawn_node = $Doors/Door_R/Spawn      
+	$Player.global_position = spawn_node.global_position
 	if NavigationManager.spawn_door_tag != null:
 		_on_level_spawn(NavigationManager.spawn_door_tag)
 	return

@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://budi2sqeikeo6"]
+[gd_scene load_steps=30 format=3 uid="uid://budi2sqeikeo6"]
 
 [ext_resource type="PackedScene" uid="uid://cgqtlonm2cm3i" path="res://Scenes/player.tscn" id="1_7klgh"]
 [ext_resource type="Script" uid="uid://db4f0v7l37sek" path="res://Scripts/game_manager.gd" id="1_b7axg"]
@@ -19,7 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://14i8l5ukgofn" path="res://Scenes/DialogeTrashBin.tscn" id="13_i1cw6"]
 [ext_resource type="Script" uid="uid://bb613fm7qxe6v" path="res://Scripts/change_to_foellinger.gd" id="15_yvtlb"]
 [ext_resource type="PackedScene" uid="uid://2hjeruvjv01e" path="res://Inventory/inv_ui.tscn" id="18_c6kcp"]
-[ext_resource type="PackedScene" uid="uid://d30h0h1xinlta" path="res://Scenes/door.tscn" id="18_yvtlb"]
+[ext_resource type="Script" uid="uid://dfm3npmg457sv" path="res://Scripts/move_to_union.gd" id="20_qxj6e"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k58gd"]
 texture = ExtResource("4_cydna")
@@ -1050,6 +1050,9 @@ sources/3 = SubResource("TileSetAtlasSource_w3p3s")
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_nx24y"]
 distance = -13.999634
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yvtlb"]
+size = Vector2(20, 87)
+
 [node name="Games" type="Node2D"]
 script = ExtResource("1_oj8f6")
 
@@ -1220,5 +1223,12 @@ position = Vector2(-191, 69)
 [node name="Inv_UI" parent="CanvasLayer" instance=ExtResource("18_c6kcp")]
 visible = false
 
-[node name="doorLeft" parent="." instance=ExtResource("18_yvtlb")]
-position = Vector2(-128, 65)
+[node name="move_to_union" type="Area2D" parent="."]
+collision_mask = 2
+script = ExtResource("20_qxj6e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="move_to_union"]
+position = Vector2(-8, 34)
+shape = SubResource("RectangleShape2D_yvtlb")
+
+[connection signal="body_entered" from="move_to_union" to="move_to_union" method="_on_body_entered"]
