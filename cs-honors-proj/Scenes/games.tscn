@@ -1173,7 +1173,7 @@ position = Vector2(-621.9999, 13)
 rotation = -1.5820698
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="killzone2"]
-position = Vector2(-8.528147, 1199.9801)
+position = Vector2(-3.678392, 1302.0411)
 rotation = -6.2685833
 shape = SubResource("WorldBoundaryShape2D_ydtro")
 
@@ -1219,4 +1219,13 @@ position = Vector2(-191, 69)
 visible = false
 
 [node name="doorLeft" parent="." instance=ExtResource("18_yvtlb")]
-position = Vector2(-128, 65)
+position = Vector2(-632, 80)
+destination_level_tag = "union"
+destination_door_tag = "R"
+spawn_direction = "right"
+
+[node name="doorRight" parent="." instance=ExtResource("18_yvtlb")]
+position = Vector2(582, 70)
+destination_level_tag = "siebel"
+destination_door_tag = "L"
+spawn_direction = "left"
