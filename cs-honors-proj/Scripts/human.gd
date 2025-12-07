@@ -11,7 +11,7 @@ func _process(delta: float) -> void:
 	elif direction < 0:
 		animated_sprite_2d.flip_h = true
 	#delete human when they walk outside the boundry
-	if position.x < -550 or position.x > 600:
+	if position.x < -650 or position.x > 650:
 		queue_free()
 		
 #for interacting

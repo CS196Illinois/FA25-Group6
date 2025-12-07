@@ -37,8 +37,8 @@ func _on_dialogic_signal(argument: String):
 # part for npc creating
 @export var human_copy = preload("res://Scenes/human.tscn")
 @export var creat_cd := 3.0  # create humann each 3 seconds
-@export var left_create_x := -550   # create outside left killzone
-@export var right_create_x := 520   # create outside right killzone
+@export var left_create_x := -620   # create outside left killzone
+@export var right_create_x := 600   # create outside right killzone
 @export var create_y := 80   # create on ground
 
 var time_count = 0.0
