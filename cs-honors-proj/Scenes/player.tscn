@@ -162,7 +162,7 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_ij4jb"]
 radius = 1.0321012
 
-[node name="player" type="CharacterBody2D"]
+[node name="player" type="CharacterBody2D" groups=["player"]]
 z_index = 5
 position = Vector2(1, 0)
 scale = Vector2(3.0427625, 2.9254577)
@@ -173,7 +173,7 @@ script = ExtResource("1_y8w33")
 position = Vector2(-3.3506922e-09, -8.203844)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_2sw5t")
-animation = &"beat"
+animation = &"idle"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://cq8y7p3m5dwh1"]
+
+[ext_resource type="Script" uid="uid://x6cwd660gsin" path="res://Scripts/moving_hazard.gd" id="1_moving"]
+[ext_resource type="Texture2D" uid="uid://g2sesgksx68m" path="res://Assets/Sprites/BirdSprite(Flying).png" id="2_s5kxw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hazard"]
+size = Vector2(28, 19)
+
+[node name="MovingHazard" type="AnimatableBody2D"]
+collision_layer = 8
+collision_mask = 2
+script = ExtResource("1_moving")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(7.749999, -1.4999981)
+scale = Vector2(1.62, 1.3125)
+texture = ExtResource("2_s5kxw")
+offset = Vector2(-5, 0)
+hframes = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, -6.5)
+shape = SubResource("RectangleShape2D_hazard")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_hazard")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_body_entered"]

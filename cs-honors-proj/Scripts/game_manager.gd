@@ -1,34 +1,29 @@
 extends Node
 
-# time UI
-@onready var canvas_layer: CanvasLayer = $"../CanvasLayer"
-@onready var ui: Control = $"../CanvasLayer/DayNightCycleUI"
-@onready var canvas_modulate: CanvasModulate = $"../CanvasModulate"
-
 #part for score(coin) collecting
 @onready var score_label: Label = $ScoreLabel
 var score = 0
 var first_reach_amount = true;
+var is_in_dialogue = false;
 #prevent repeated dialogue
-func _ready():
+func start_game():
 	#connect autoload GameManager to find ScoreLabel
 	score_label = get_tree().get_root().find_child("ScoreLabel", true, false)
 	#connect dialogic signal and begining initial dialog
 	Dialogic.signal_event.connect(_on_dialogic_signal)
-	Dialogic.start("beginning")
-	call_deferred("_connect_time_tick")
+	Dialogic.timeline_started.connect(_on_timeline_started)
+	Dialogic.timeline_ended.connect(_on_timeline_ended)
+	#avoid character moving during the dialog
+	if ! GlobalState.intro_played:
+		GlobalState.intro_played = true;
+		Dialogic.start("beginning")
 
-func _connect_time_tick():
-	if canvas_layer:
-		canvas_layer.visible = true
-	else:
-		push_error("canvas_layer was null when connecting")
-		
-	if canvas_modulate and ui:
-		canvas_modulate.time_tick.connect(ui.set_daytime)
-	else:
-		push_error("UI or canvas_modulate was null when connecting!")
-	
+func _on_timeline_started():
+	is_in_dialogue = true
+#check if dialog is processing
+func _on_timeline_ended():
+	is_in_dialogue = false
+
 #count coins
 func add_point():
 	score += 1
@@ -40,9 +35,9 @@ func _on_dialogic_signal(argument: String):
 		get_tree().quit()
 		
 # part for npc creating
-@export var human_copy = preload("res://Scene/human.tscn")
+@export var human_copy = preload("res://Scenes/human.tscn")
 @export var creat_cd := 3.0  # create humann each 3 seconds
-@export var left_create_x := -550   # create outside left killzone
+@export var left_create_x := -620   # create outside left killzone
 @export var right_create_x := 600   # create outside right killzone
 @export var create_y := 80   # create on ground
 
@@ -57,17 +52,18 @@ func create_human():
 	else:
 		human.position = Vector2(right_create_x, create_y);
 		human.direction = -1;
-	add_child(human) #add our new human
+	get_tree().current_scene.add_child(human)
+	#add our new human
 
 #creat human each 3 seconds
-func _process(delta):
+func human_creating(delta):
 	time_count += delta
 	if time_count >= creat_cd:
 		time_count = 0
 		create_human()
 		
 #add conditional dialog
+func _process(delta: float) -> void:
 	if score == 10 and first_reach_amount:
 		first_reach_amount = false
 		Dialogic.start("coins collection")
-		

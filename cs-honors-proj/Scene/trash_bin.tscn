@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://cl72d1gw2hdi3"]
+
+[ext_resource type="Script" uid="uid://dcso2mm3erp0x" path="res://Script/trash_bin.gd" id="1_bkipl"]
+[ext_resource type="Texture2D" uid="uid://pl18dlimyjj0" path="res://Asset/sprite/Decoration 32x32.png" id="1_xbr5j"]
+[ext_resource type="AudioStream" uid="uid://85ds77tgn6qi" path="res://Asset/sounds/coin.wav" id="3_7ldw8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s6ujc"]
+size = Vector2(24, 28)
+
+[node name="trashBIn" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_bkipl")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_xbr5j")
+region_enabled = true
+region_rect = Rect2(129, 1, 30, 32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_s6ujc")
+
+[node name="pickupsound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_7ldw8")
+bus = &"sound effects"
+
+[node name="CD" type="Timer" parent="."]
+wait_time = 10.0
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="timeout" from="CD" to="." method="_on_ten_seconds_timeout"]
