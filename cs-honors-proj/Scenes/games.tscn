@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://bxsuegw53on7u" path="res://Scenes/coin.tscn" id="11_roo15"]
 [ext_resource type="FontFile" uid="uid://dc3ttbrhos674" path="res://DemoAsset/fonts/PixelOperator8.ttf" id="12_vequr"]
 [ext_resource type="PackedScene" uid="uid://14i8l5ukgofn" path="res://Scenes/DialogeTrashBin.tscn" id="13_i1cw6"]
+[ext_resource type="Script" uid="uid://bb613fm7qxe6v" path="res://Scripts/change_to_foellinger.gd" id="15_yvtlb"]
 [ext_resource type="PackedScene" uid="uid://2hjeruvjv01e" path="res://Inventory/inv_ui.tscn" id="18_c6kcp"]
 [ext_resource type="PackedScene" uid="uid://d30h0h1xinlta" path="res://Scenes/door.tscn" id="18_yvtlb"]
 
@@ -1073,7 +1074,7 @@ texture = ExtResource("3_dlpat")
 
 [node name="player" parent="." instance=ExtResource("1_7klgh")]
 z_index = 15
-position = Vector2(-93, -1)
+position = Vector2(-95, 80)
 inv = ExtResource("6_w3p3s")
 
 [node name="player#Camera2D" type="Camera2D" parent="player"]
@@ -1171,6 +1172,7 @@ scale = Vector2(0.9235213, 0.9493634)
 [node name="killzone2" parent="." instance=ExtResource("10_m7ert")]
 position = Vector2(-621.9999, 13)
 rotation = -1.5820698
+script = ExtResource("15_yvtlb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="killzone2"]
 position = Vector2(-3.678392, 1302.0411)
