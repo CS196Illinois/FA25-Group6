@@ -1,9 +1,11 @@
-[gd_scene load_steps=11 format=4 uid="uid://cegf1fqwph63q"]
+[gd_scene load_steps=13 format=4 uid="uid://cegf1fqwph63q"]
 
-[ext_resource type="Texture2D" uid="uid://bgb3v4p31urbh" path="res://Assets/sprite/Building Tiles 32x32.png" id="1_2escl"]
+[ext_resource type="Texture2D" uid="uid://bgb3v4p31urbh" path="res://DemoAsset/sprite/Building Tiles 32x32.png" id="1_2escl"]
 [ext_resource type="Texture2D" uid="uid://30xee3lu63u8" path="res://Assets/UIUC_Tilemap_4.png" id="2_111av"]
 [ext_resource type="Texture2D" uid="uid://b6uo1p5woxdvt" path="res://Assets/sprite/siebel_tileset.png" id="3_kgntb"]
 [ext_resource type="Texture2D" uid="uid://dfm0qk0ptdhg4" path="res://Assets/sprite/uiuc_signs_tileset.png" id="4_111av"]
+[ext_resource type="PackedScene" uid="uid://cgqtlonm2cm3i" path="res://Scenes/player.tscn" id="5_obafr"]
+[ext_resource type="PackedScene" uid="uid://d30h0h1xinlta" path="res://Scenes/door.tscn" id="6_71a0m"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_obafr"]
 texture = ExtResource("1_2escl")
@@ -139,8 +141,11 @@ texture = ExtResource("2_111av")
 15:2/0 = 0
 0:3/0 = 0
 1:3/0 = 0
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 2:3/0 = 0
+2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 3:3/0 = 0
+3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 4:3/0 = 0
 5:3/0 = 0
 6:3/0 = 0
@@ -355,6 +360,8 @@ texture = ExtResource("3_kgntb")
 0:2/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_5lsv5"]
+physics_layer_0/collision_layer = 3
+physics_layer_0/collision_mask = 3
 sources/0 = SubResource("TileSetAtlasSource_obafr")
 sources/1 = SubResource("TileSetAtlasSource_71a0m")
 sources/2 = SubResource("TileSetAtlasSource_bvx4q")
@@ -390,3 +397,23 @@ tile_set = SubResource("TileSet_5lsv5")
 [node name="Deco" type="TileMapLayer" parent="TileMapLayers"]
 tile_map_data = PackedByteArray("AADz//7/AAAEAAYAAAA=")
 tile_set = SubResource("TileSet_mrf7l")
+
+[node name="player" parent="." instance=ExtResource("5_obafr")]
+position = Vector2(-255, 1)
+
+[node name="player#Camera2D" type="Camera2D" parent="player"]
+position = Vector2(-0.22063874, -7.945501)
+scale = Vector2(0.10800998, 0.1168456)
+zoom = Vector2(3, 3)
+limit_left = -255
+limit_top = -271
+limit_right = 338
+limit_bottom = 55
+limit_smoothed = true
+position_smoothing_enabled = true
+
+[node name="doorLeft" parent="." instance=ExtResource("6_71a0m")]
+position = Vector2(-279, -8)
+destination_level_tag = "games"
+destination_door_tag = "R"
+spawn_direction = "right"
