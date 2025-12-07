@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://toe2nweb8qfk"]
+[gd_scene load_steps=11 format=3 uid="uid://toe2nweb8qfk"]
 
 [ext_resource type="Texture2D" uid="uid://30xee3lu63u8" path="res://Assets/UIUC_Tilemap_4.png" id="1_j2ctn"]
 [ext_resource type="Script" uid="uid://doyrewgtbc8dt" path="res://Scripts/level.gd" id="1_wpfjs"]
-[ext_resource type="PackedScene" uid="uid://cgqtlonm2cm3i" path="res://scenes/player.tscn" id="2_j2ctn"]
+[ext_resource type="PackedScene" uid="uid://cgqtlonm2cm3i" path="res://Scenes/player.tscn" id="2_j2ctn"]
 [ext_resource type="PackedScene" uid="uid://d30h0h1xinlta" path="res://Scenes/door.tscn" id="4_wpfjs"]
+[ext_resource type="Script" uid="uid://c6p8onjq4tbc5" path="res://Scripts/tree_interact.gd" id="5_l5jiv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_juhlc"]
 texture = ExtResource("1_j2ctn")
@@ -178,6 +179,12 @@ sources/1 = SubResource("TileSetAtlasSource_juhlc")
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_j2ctn"]
 distance = -48.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_24doe"]
+size = Vector2(10, 54)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uvdjg"]
+size = Vector2(20, 166)
+
 [node name="union" type="Node2D"]
 script = ExtResource("1_wpfjs")
 
@@ -196,7 +203,7 @@ layer_4/name = "Ground"
 layer_4/tile_data = PackedInt32Array(65533, 65537, 3, 65534, 131073, 3, 65535, 196609, 3, 0, 65537, 3, 1, 131073, 3, 2, 196609, 3, 3, 65537, 3, 4, 131073, 3, 5, 196609, 3, 6, 65537, 3, 7, 131073, 3, 8, 196609, 3, 65530, 65537, 3, 65531, 131073, 3, 65532, 196609, 3, 65527, 65537, 3, 65528, 131073, 3, 65529, 196609, 3, 9, 65537, 3, 10, 131073, 3, 11, 196609, 3, 12, 65537, 3, 13, 131073, 3, 14, 196609, 3, 65524, 65537, 3, 65525, 131073, 3, 65526, 196609, 3)
 
 [node name="Player" parent="." instance=ExtResource("2_j2ctn")]
-position = Vector2(3, 0)
+position = Vector2(-297, 1)
 
 [node name="Camera2D2" type="Camera2D" parent="Player"]
 offset = Vector2(0, -44.35)
@@ -229,10 +236,33 @@ position = Vector2(-305, 0)
 [node name="Door_R" parent="Doors" instance=ExtResource("4_wpfjs")]
 
 [node name="CollisionShape2D" parent="Doors/Door_R" index="0"]
+position = Vector2(0, -75)
 disabled = true
 
 [node name="Spawn" parent="Doors/Door_R" index="1"]
 position = Vector2(289, -1)
+
+[node name="tree_interact" type="Area2D" parent="."]
+collision_mask = 2
+script = ExtResource("5_l5jiv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="tree_interact"]
+position = Vector2(-296, -29)
+shape = SubResource("RectangleShape2D_24doe")
+
+[node name="door" parent="." instance=ExtResource("4_wpfjs")]
+position = Vector2(229, 0)
+collision_layer = 1
+collision_mask = 2
+destination_level_tag = "games"
+destination_door_tag = "left"
+spawn_direction = "left"
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="door"]
+position = Vector2(1, -73)
+shape = SubResource("RectangleShape2D_uvdjg")
+
+[connection signal="body_entered" from="tree_interact" to="tree_interact" method="_on_body_entered"]
 
 [editable path="Doors/Door_L"]
 [editable path="Doors/Door_R"]

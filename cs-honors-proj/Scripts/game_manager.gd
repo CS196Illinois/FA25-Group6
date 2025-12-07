@@ -14,7 +14,9 @@ func start_game():
 	Dialogic.timeline_started.connect(_on_timeline_started)
 	Dialogic.timeline_ended.connect(_on_timeline_ended)
 	#avoid character moving during the dialog
-	Dialogic.start("beginning")
+	if ! GlobalState.intro_played:
+		GlobalState.intro_played = true;
+		Dialogic.start("beginning")
 
 func _on_timeline_started():
 	is_in_dialogue = true
@@ -50,7 +52,7 @@ func create_human():
 	else:
 		human.position = Vector2(right_create_x, create_y);
 		human.direction = -1;
-	add_child(human) 
+	get_tree().current_scene.add_child(human)
 	#add our new human
 
 #creat human each 3 seconds
@@ -65,4 +67,3 @@ func _process(delta: float) -> void:
 	if score == 10 and first_reach_amount:
 		first_reach_amount = false
 		Dialogic.start("coins collection")
-		#
