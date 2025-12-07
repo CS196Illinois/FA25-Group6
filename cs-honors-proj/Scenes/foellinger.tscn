@@ -387,6 +387,10 @@ position = Vector2(4.365002, 145.0586)
 rotation = -6.2685833
 shape = SubResource("WorldBoundaryShape2D_mt6t4")
 
+[node name="Marker2D" type="Marker2D" parent="left"]
+position = Vector2(-44.319607, 205.51343)
+gizmo_extents = 31.9
+
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
 
