@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://cgtoy5wuc11is"]
+
+[ext_resource type="AudioStream" uid="uid://ceelfrbpamfgq" path="res://Asset/music/John Erick - Pachelbel's Canon.mp3" id="1_kt2l4"]
+
+[node name="Node" type="Node"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_kt2l4")
+autoplay = true
+bus = &"music"

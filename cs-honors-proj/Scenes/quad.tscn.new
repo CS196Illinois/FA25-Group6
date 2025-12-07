@@ -1,0 +1,2 @@
+fatal: path 'cs-honors-proj/Scenes/quad.tscn' exists, but not 'Scenes/quad.tscn'
+hint: Did you mean 'HEAD:cs-honors-proj/Scenes/quad.tscn' aka 'HEAD:./Scenes/quad.tscn'?

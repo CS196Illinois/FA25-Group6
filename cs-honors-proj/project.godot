@@ -26,6 +26,8 @@ GlobalState="*res://Scripts/global_state.gd"
 
 directories/dch_directory={
 "character": "res://DemoDialog/character/character.dch",
+"character/character": "res://dialog/character/character.dch",
+"character/trashBin": "res://dialog/character/trashBin.dch",
 "trashBin": "res://DemoDialog/character/trashBin.dch",
 "unit_test_character": "res://Tests/Resources/unit_test_character.dch"
 }
@@ -33,7 +35,56 @@ directories/dtl_directory={
 "beginning": "res://DemoDialog/timeline/beginning.dtl",
 "coins collection": "res://DemoDialog/timeline/coins collection.dtl",
 "greetTrashBin": "res://DemoDialog/timeline/greetTrashBin.dtl",
-"talkAgain": "res://DemoDialog/timeline/talkAgain.dtl"
+"npc_chat_1": "res://dialog/timeline/npc_chat_1.dtl",
+"npc_chat_1_int_5": "res://dialog/timeline/npc_chat_1_int_5.dtl",
+"npc_chat_1_int_7": "res://dialog/timeline/npc_chat_1_int_7.dtl",
+"npc_chat_1_int_9": "res://dialog/timeline/npc_chat_1_int_9.dtl",
+"npc_chat_1_low_int": "res://dialog/timeline/npc_chat_1_low_int.dtl",
+"npc_chat_1_mid_int": "res://dialog/timeline/npc_chat_1_mid_int.dtl",
+"npc_chat_2": "res://dialog/timeline/npc_chat_2.dtl",
+"npc_chat_2_int_5": "res://dialog/timeline/npc_chat_2_int_5.dtl",
+"npc_chat_2_int_7": "res://dialog/timeline/npc_chat_2_int_7.dtl",
+"npc_chat_2_int_9": "res://dialog/timeline/npc_chat_2_int_9.dtl",
+"npc_chat_2_low_int": "res://dialog/timeline/npc_chat_2_low_int.dtl",
+"npc_chat_2_mid_int": "res://dialog/timeline/npc_chat_2_mid_int.dtl",
+"npc_chat_3": "res://dialog/timeline/npc_chat_3.dtl",
+"npc_chat_3_int_5": "res://dialog/timeline/npc_chat_3_int_5.dtl",
+"npc_chat_3_int_7": "res://dialog/timeline/npc_chat_3_int_7.dtl",
+"npc_chat_3_int_9": "res://dialog/timeline/npc_chat_3_int_9.dtl",
+"npc_chat_3_low_int": "res://dialog/timeline/npc_chat_3_low_int.dtl",
+"npc_chat_3_mid_int": "res://dialog/timeline/npc_chat_3_mid_int.dtl",
+"npc_chat_4": "res://dialog/timeline/npc_chat_4.dtl",
+"npc_chat_4_int_5": "res://dialog/timeline/npc_chat_4_int_5.dtl",
+"npc_chat_4_int_7": "res://dialog/timeline/npc_chat_4_int_7.dtl",
+"npc_chat_4_int_9": "res://dialog/timeline/npc_chat_4_int_9.dtl",
+"npc_chat_4_low_int": "res://dialog/timeline/npc_chat_4_low_int.dtl",
+"npc_chat_4_mid_int": "res://dialog/timeline/npc_chat_4_mid_int.dtl",
+"npc_chat_5": "res://dialog/timeline/npc_chat_5.dtl",
+"npc_chat_5_int_5": "res://dialog/timeline/npc_chat_5_int_5.dtl",
+"npc_chat_5_int_7": "res://dialog/timeline/npc_chat_5_int_7.dtl",
+"npc_chat_5_int_9": "res://dialog/timeline/npc_chat_5_int_9.dtl",
+"npc_chat_5_low_int": "res://dialog/timeline/npc_chat_5_low_int.dtl",
+"npc_chat_5_mid_int": "res://dialog/timeline/npc_chat_5_mid_int.dtl",
+"npc_chat_6": "res://dialog/timeline/npc_chat_6.dtl",
+"npc_chat_6_int_5": "res://dialog/timeline/npc_chat_6_int_5.dtl",
+"npc_chat_6_int_7": "res://dialog/timeline/npc_chat_6_int_7.dtl",
+"npc_chat_6_int_9": "res://dialog/timeline/npc_chat_6_int_9.dtl",
+"npc_chat_6_low_int": "res://dialog/timeline/npc_chat_6_low_int.dtl",
+"npc_chat_7": "res://dialog/timeline/npc_chat_7.dtl",
+"npc_chat_7_int_5": "res://dialog/timeline/npc_chat_7_int_5.dtl",
+"npc_chat_7_int_7": "res://dialog/timeline/npc_chat_7_int_7.dtl",
+"npc_chat_7_int_9": "res://dialog/timeline/npc_chat_7_int_9.dtl",
+"npc_chat_7_low_int": "res://dialog/timeline/npc_chat_7_low_int.dtl",
+"npc_chat_8": "res://dialog/timeline/npc_chat_8.dtl",
+"npc_chat_8_int_5": "res://dialog/timeline/npc_chat_8_int_5.dtl",
+"npc_chat_8_int_7": "res://dialog/timeline/npc_chat_8_int_7.dtl",
+"npc_chat_8_int_9": "res://dialog/timeline/npc_chat_8_int_9.dtl",
+"npc_chat_8_low_int": "res://dialog/timeline/npc_chat_8_low_int.dtl",
+"talkAgain": "res://DemoDialog/timeline/talkAgain.dtl",
+"timeline/beginning": "res://dialog/timeline/beginning.dtl",
+"timeline/coins collection": "res://dialog/timeline/coins collection.dtl",
+"timeline/greetTrashBin": "res://dialog/timeline/greetTrashBin.dtl",
+"timeline/talkAgain": "res://dialog/timeline/talkAgain.dtl"
 }
 layout/style_directory={}
 variables={
@@ -102,6 +153,11 @@ interact={
 inventory={
 "deadzone": 0.2,
 "events": [null, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":69,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+]
+}
+scare={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":70,"key_label":0,"unicode":102,"location":0,"echo":false,"script":null)
 ]
 }
 

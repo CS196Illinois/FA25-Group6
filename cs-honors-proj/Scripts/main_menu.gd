@@ -10,7 +10,7 @@ func _on_continue_button_pressed() -> void:
 	# USE THIS COMAMND TO CHANGE SCENE
 	# get_tree().change_scene_to_file("NAME OF SCENE")
 	get_tree().change_scene_to_file("res://Scenes/dorm_room.tscn")
-	
+
 func _on_new_game_button_pressed() -> void:
 	#button_press_sfx.play()
 	get_tree().change_scene_to_file("res://Scenes/games.tscn")

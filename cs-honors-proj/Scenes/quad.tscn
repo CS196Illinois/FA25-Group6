@@ -1,10 +1,12 @@
-[gd_scene load_steps=10 format=3 uid="uid://dxg20fa12du4p"]
+[gd_scene load_steps=12 format=3 uid="uid://dxg20fa12du4p"]
 
 [ext_resource type="Texture2D" uid="uid://30xee3lu63u8" path="res://Assets/UIUC_Tilemap_4.png" id="1_0r54i"]
 [ext_resource type="Script" uid="uid://doyrewgtbc8dt" path="res://Scripts/level.gd" id="1_ofjc2"]
 [ext_resource type="PackedScene" uid="uid://cgqtlonm2cm3i" path="res://Scenes/player.tscn" id="2_7q3og"]
 [ext_resource type="Texture2D" uid="uid://dfm0qk0ptdhg4" path="res://Assets/sprite/uiuc_signs_tileset.png" id="2_aj3ml"]
 [ext_resource type="PackedScene" uid="uid://d30h0h1xinlta" path="res://Scenes/door.tscn" id="4_ofjc2"]
+[ext_resource type="PackedScene" uid="uid://cq8y7p3m5dwh1" path="res://Scenes/moving_hazard.tscn" id="5_hazard"]
+[ext_resource type="PackedScene" uid="uid://cp0cacynooqtv" path="res://hearts_container.tscn" id="6_hearts"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8d42b"]
 texture = ExtResource("2_aj3ml")
@@ -265,10 +267,39 @@ limit_right = 600
 limit_bottom = 70
 position_smoothing_enabled = true
 
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="HeartsContainer" parent="UI" instance=ExtResource("6_hearts")]
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 95.0
+offset_bottom = 46.0
+scale = Vector2(4.5, 4.5)
+
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource("WorldBoundaryShape2D_yqjtg")
+
+[node name="Hazards" type="Node" parent="."]
+
+[node name="MovingHazard1" parent="Hazards" instance=ExtResource("5_hazard")]
+position = Vector2(100, -50)
+move_speed = 60.0
+move_distance = 120.0
+
+[node name="MovingHazard2" parent="Hazards" instance=ExtResource("5_hazard")]
+position = Vector2(300, -50)
+move_speed = 80.0
+move_distance = 150.0
+
+[node name="MovingHazard3" parent="Hazards" instance=ExtResource("5_hazard")]
+position = Vector2(-50, -100)
+
+[node name="GroundHazard2" parent="Hazards" instance=ExtResource("5_hazard")]
+position = Vector2(200, -16)
+move_speed = 60.0
+move_distance = 180.0
 
 [node name="Doors" type="Node" parent="."]
 
