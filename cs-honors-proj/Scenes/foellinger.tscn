@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://cst33ec5wbx1d"]
+[gd_scene load_steps=21 format=3 uid="uid://cst33ec5wbx1d"]
 
 [ext_resource type="Script" uid="uid://doyrewgtbc8dt" path="res://Scripts/level.gd" id="1_prlsm"]
 [ext_resource type="Texture2D" uid="uid://30xee3lu63u8" path="res://Assets/UIUC_Tilemap_4.png" id="1_tu7j6"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://d30h0h1xinlta" path="res://Scenes/door.tscn" id="5_prlsm"]
 [ext_resource type="PackedScene" uid="uid://blwp71h10qy7" path="res://Scenes/killzone.tscn" id="7_edgw4"]
 [ext_resource type="Script" uid="uid://dqt34p0cloh0b" path="res://Scripts/left.gd" id="8_jkk73"]
+[ext_resource type="PackedScene" uid="uid://cp0cacynooqtv" path="res://hearts_container.tscn" id="9_hearts"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tqggk"]
 texture = ExtResource("2_q7qtm")
@@ -390,6 +391,15 @@ shape = SubResource("WorldBoundaryShape2D_mt6t4")
 [node name="Marker2D" type="Marker2D" parent="left"]
 position = Vector2(-44.319607, 205.51343)
 gizmo_extents = 31.9
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="HeartsContainer" parent="UI" instance=ExtResource("9_hearts")]
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 95.0
+offset_bottom = 46.0
+scale = Vector2(4.5, 4.5)
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://d31660hw6h2s1"]
+[gd_scene load_steps=20 format=4 uid="uid://d31660hw6h2s1"]
 
 [ext_resource type="Texture2D" uid="uid://sqir4msf64ar" path="res://Assets/sprite/dorm_room_spritesheet.png" id="1_2q6nv"]
 [ext_resource type="Texture2D" uid="uid://65okk0ps8254" path="res://Assets/sprite/leaf_tile.png" id="2_5umi5"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://c7xpghv7d03xv" path="res://Scenes/bed.tscn" id="4_kqe5f"]
 [ext_resource type="PackedScene" uid="uid://dvk5qfap1oyvj" path="res://Scenes/desk.tscn" id="5_mcu3f"]
 [ext_resource type="Script" uid="uid://tmgdgtodguks" path="res://Scripts/door_collision.gd" id="7_irlgr"]
+[ext_resource type="PackedScene" uid="uid://cp0cacynooqtv" path="res://hearts_container.tscn" id="8_hearts"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7wird"]
 texture = ExtResource("1_2q6nv")
@@ -195,3 +196,12 @@ script = ExtResource("7_irlgr")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="door_collision"]
 position = Vector2(0, -10)
 shape = SubResource("RectangleShape2D_1i22r")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="HeartsContainer" parent="UI" instance=ExtResource("8_hearts")]
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 95.0
+offset_bottom = 46.0
+scale = Vector2(4.5, 4.5)

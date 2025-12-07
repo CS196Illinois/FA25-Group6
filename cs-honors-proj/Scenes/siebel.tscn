@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://cegf1fqwph63q"]
+[gd_scene load_steps=14 format=4 uid="uid://cegf1fqwph63q"]
 
 [ext_resource type="Texture2D" uid="uid://bgb3v4p31urbh" path="res://DemoAsset/sprite/Building Tiles 32x32.png" id="1_2escl"]
 [ext_resource type="Texture2D" uid="uid://30xee3lu63u8" path="res://Assets/UIUC_Tilemap_4.png" id="2_111av"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dfm0qk0ptdhg4" path="res://Assets/sprite/uiuc_signs_tileset.png" id="4_111av"]
 [ext_resource type="PackedScene" uid="uid://cgqtlonm2cm3i" path="res://Scenes/player.tscn" id="5_obafr"]
 [ext_resource type="PackedScene" uid="uid://d30h0h1xinlta" path="res://Scenes/door.tscn" id="6_71a0m"]
+[ext_resource type="PackedScene" uid="uid://cp0cacynooqtv" path="res://hearts_container.tscn" id="7_hearts"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_obafr"]
 texture = ExtResource("1_2escl")
@@ -417,3 +418,12 @@ position = Vector2(-279, -8)
 destination_level_tag = "games"
 destination_door_tag = "R"
 spawn_direction = "right"
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="HeartsContainer" parent="UI" instance=ExtResource("7_hearts")]
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 95.0
+offset_bottom = 46.0
+scale = Vector2(4.5, 4.5)

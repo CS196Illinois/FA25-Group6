@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://budi2sqeikeo6"]
+[gd_scene load_steps=31 format=3 uid="uid://budi2sqeikeo6"]
 
 [ext_resource type="PackedScene" uid="uid://cgqtlonm2cm3i" path="res://Scenes/player.tscn" id="1_7klgh"]
 [ext_resource type="Script" uid="uid://db4f0v7l37sek" path="res://Scripts/game_manager.gd" id="1_b7axg"]
@@ -6,6 +6,7 @@
 [ext_resource type="FontFile" uid="uid://jsn1r6hmqnfw" path="res://DemoAsset/fonts/PixelOperator8-Bold.ttf" id="2_1bd3e"]
 [ext_resource type="Texture2D" uid="uid://c2dypa2rwxa70" path="res://DemoAsset/sprite/City background.png" id="3_dlpat"]
 [ext_resource type="Texture2D" uid="uid://bgb3v4p31urbh" path="res://DemoAsset/sprite/Building Tiles 32x32.png" id="4_cydna"]
+[ext_resource type="PackedScene" uid="uid://cp0cacynooqtv" path="res://hearts_container.tscn" id="7_hearts"]
 [ext_resource type="Texture2D" uid="uid://cggewjte85shw" path="res://DemoAsset/sprite/GandalfHardcore city tiles 32x32.png" id="5_o1ef4"]
 [ext_resource type="Resource" uid="uid://b3v8q1itsxbbm" path="res://Inventory/playerinv.tres" id="6_w3p3s"]
 [ext_resource type="Texture2D" uid="uid://pl18dlimyjj0" path="res://DemoAsset/sprite/Decoration 32x32.png" id="6_xhb6k"]
@@ -1230,5 +1231,14 @@ script = ExtResource("20_qxj6e")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="move_to_union"]
 position = Vector2(-8, 34)
 shape = SubResource("RectangleShape2D_yvtlb")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="HeartsContainer" parent="UI" instance=ExtResource("7_hearts")]
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 95.0
+offset_bottom = 46.0
+scale = Vector2(4.5, 4.5)
 
 [connection signal="body_entered" from="move_to_union" to="move_to_union" method="_on_body_entered"]
