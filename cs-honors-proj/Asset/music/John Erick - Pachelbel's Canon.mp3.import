@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ceelfrbpamfgq"
+path="res://.godot/imported/John Erick - Pachelbel's Canon.mp3-f17c6abea2a8e89d7381022d2f115800.mp3str"
+
+[deps]
+
+source_file="res://Asset/music/John Erick - Pachelbel's Canon.mp3"
+dest_files=["res://.godot/imported/John Erick - Pachelbel's Canon.mp3-f17c6abea2a8e89d7381022d2f115800.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

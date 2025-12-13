@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://d31660hw6h2s1"]
+[gd_scene load_steps=18 format=4 uid="uid://d31660hw6h2s1"]
 
 [ext_resource type="Texture2D" uid="uid://sqir4msf64ar" path="res://Assets/sprite/dorm_room_spritesheet.png" id="1_2q6nv"]
 [ext_resource type="Texture2D" uid="uid://65okk0ps8254" path="res://Assets/sprite/leaf_tile.png" id="2_5umi5"]
@@ -6,6 +6,7 @@
 [ext_resource type="Resource" uid="uid://b3v8q1itsxbbm" path="res://Inventory/playerinv.tres" id="4_104uk"]
 [ext_resource type="PackedScene" uid="uid://c7xpghv7d03xv" path="res://Scenes/bed.tscn" id="4_kqe5f"]
 [ext_resource type="PackedScene" uid="uid://dvk5qfap1oyvj" path="res://Scenes/desk.tscn" id="5_mcu3f"]
+[ext_resource type="PackedScene" uid="uid://2hjeruvjv01e" path="res://Inventory/inv_ui.tscn" id="7_irlgr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7wird"]
 texture = ExtResource("1_2q6nv")
@@ -185,3 +186,7 @@ color = Color(0, 0, 0, 1)
 libraries = {
 &"": SubResource("AnimationLibrary_irlgr")
 }
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Inv_UI" parent="CanvasLayer" instance=ExtResource("7_irlgr")]

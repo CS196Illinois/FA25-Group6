@@ -3,6 +3,8 @@ extends Node
 const scene_foellinger = preload("res://scenes/foellinger.tscn")
 const scene_quad = preload("res://scenes/quad.tscn")
 const scene_union = preload("res://scenes/union.tscn")
+const scene_green_st = preload("res://scenes/games.tscn")
+const scene_siebel = preload("res://scenes/siebel.tscn")
 
 signal on_trigger_player_spawn
 
@@ -18,6 +20,10 @@ func go_to_level(level_tag, destination_tag):
 			scene_to_load = scene_quad
 		"union":
 			scene_to_load = scene_union
+		"games":
+			scene_to_load = scene_green_st
+		"siebel":
+			scene_to_load = scene_siebel
 		
 	if scene_to_load != null:
 		spawn_door_tag = destination_tag

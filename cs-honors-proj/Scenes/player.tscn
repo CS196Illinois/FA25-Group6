@@ -162,7 +162,7 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_ij4jb"]
 radius = 1.0321012
 
-[node name="player" type="CharacterBody2D"]
+[node name="player" type="CharacterBody2D" groups=["player"]]
 z_index = 5
 position = Vector2(1, 0)
 scale = Vector2(3.0427625, 2.9254577)
