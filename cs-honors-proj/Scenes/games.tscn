@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://budi2sqeikeo6"]
+[gd_scene load_steps=30 format=3 uid="uid://budi2sqeikeo6"]
 
 [ext_resource type="PackedScene" uid="uid://cgqtlonm2cm3i" path="res://Scenes/player.tscn" id="1_7klgh"]
 [ext_resource type="Script" uid="uid://db4f0v7l37sek" path="res://Scripts/game_manager.gd" id="1_b7axg"]
@@ -18,6 +18,9 @@
 [ext_resource type="FontFile" uid="uid://dc3ttbrhos674" path="res://DemoAsset/fonts/PixelOperator8.ttf" id="12_vequr"]
 [ext_resource type="PackedScene" uid="uid://14i8l5ukgofn" path="res://Scenes/DialogeTrashBin.tscn" id="13_i1cw6"]
 [ext_resource type="PackedScene" uid="uid://2hjeruvjv01e" path="res://Inventory/inv_ui.tscn" id="18_c6kcp"]
+[ext_resource type="PackedScene" uid="uid://cldxn6qlmuws6" path="res://Scenes/timeUI.tscn" id="19_yvtlb"]
+[ext_resource type="Script" uid="uid://cm7g2lj8bd53q" path="res://Scripts/day-night.gd" id="20_qxj6e"]
+[ext_resource type="Texture2D" uid="uid://cfm0181tssy5t" path="res://Assets/time_cycle/daynightcycle-gradient-texture.tres" id="21_m2uf7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k58gd"]
 texture = ExtResource("4_cydna")
@@ -1217,3 +1220,13 @@ position = Vector2(-191, 69)
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Inv_UI" parent="CanvasLayer" instance=ExtResource("18_c6kcp")]
+
+[node name="Time_UI" parent="CanvasLayer" instance=ExtResource("19_yvtlb")]
+offset_left = 880.0
+offset_top = 8.0
+offset_right = 920.0
+offset_bottom = 48.0
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+script = ExtResource("20_qxj6e")
+gradient = ExtResource("21_m2uf7")
